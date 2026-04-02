@@ -133,7 +133,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
         
         .nav-links a {
@@ -143,6 +143,7 @@
             transition: var(--transition);
             position: relative;
             padding: 5px 0;
+            font-size: 0.95rem;
         }
         
         .nav-links a:hover,
@@ -272,7 +273,135 @@
             box-shadow: var(--shadow-hover);
         }
         
-        /* ===== EDUCATION & EXPERIENCE ===== */
+        /* ===== EDUCATION SECTION ===== */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .education-card .period {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .education-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .education-card .institution {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .education-card .gpa {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .education-card p {
+            color: var(--gray);
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+        
+        /* ===== TRAINING SECTION ===== */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .training-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .training-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .training-image i {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .training-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .training-content {
+            padding: 20px;
+        }
+        
+        .training-content h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .training-content .issuer {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .training-content .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .training-content .duration {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== EXPERIENCE SECTION ===== */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -365,7 +494,7 @@
         /* ===== SKILLS SECTION ===== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
         
@@ -418,41 +547,82 @@
         }
         
         /* ===== RESEARCH SECTION ===== */
-        .research-highlights {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
+        .research-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
         
-        .research-highlights h4 {
+        .research-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .research-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 5px;
+            background: var(--light-gray);
+        }
+        
+        .research-img {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .research-img i {
+            z-index: 2;
+        }
+        
+        .research-content {
+            padding: 25px;
+        }
+        
+        .research-content h4 {
             color: var(--primary);
             margin-bottom: 15px;
+            font-size: 1.4rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .research-highlights h4 i {
+        .research-content h4 i {
             color: var(--accent);
         }
         
-        .research-highlights p {
+        .research-content p {
             color: var(--gray);
             margin-bottom: 15px;
+            line-height: 1.7;
         }
         
         .research-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
         }
         
         .tag {
             background: var(--light-gray);
-            padding: 5px 15px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             color: var(--dark);
@@ -467,10 +637,10 @@
         /* ===== PUBLICATIONS ===== */
         .publication-card {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: var(--shadow);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-left: 4px solid var(--accent);
             transition: var(--transition);
         }
@@ -482,31 +652,94 @@
         
         .publication-card h4 {
             color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            line-height: 1.4;
         }
         
         .publication-card .authors {
             color: var(--gray);
             font-style: italic;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 0.95rem;
         }
         
         .publication-card .journal {
             color: var(--dark);
-            font-weight: 500;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .publication-card .abstract {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
         }
         
         .publication-card .status {
             display: inline-block;
             background: var(--secondary);
             color: white;
-            padding: 3px 12px;
+            padding: 4px 15px;
             border-radius: 15px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin-top: 10px;
+        }
+        
+        /* ===== COLLABORATION SECTION ===== */
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .collaboration-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .collaboration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .collaboration-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 180px;
+        }
+        
+        .collab-img {
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            border-radius: 5px;
+        }
+        
+        .collaboration-content {
+            padding: 20px;
+        }
+        
+        .collaboration-content h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .collaboration-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
         
         /* ===== CONTACT SECTION ===== */
@@ -695,6 +928,11 @@
             .section-title h2 {
                 font-size: 1.8rem;
             }
+            
+            .education-grid,
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -724,10 +962,12 @@
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
+                    <li><a href="#training">Training</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
+                    <li><a href="#collaboration">Collaboration</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-toggle" id="mobileToggle">
@@ -762,7 +1002,7 @@
                 <div class="about-text">
                     <h3>Passionate Biochemist & Researcher</h3>
                     <p>Hello! I'm Mahedi Hassan, a dedicated biochemist from Dhaka, Bangladesh, holding a B.Sc. in Biochemistry and Molecular Biology from Gono Bishwabidyalay.</p>
-                    <p>My academic journey combines experience as a lecturer in medical institutes with a growing research focus on <strong>computational drug discovery</strong>. I am currently engaged in in-silico research, employing molecular docking, molecular dynamics simulations, and AI-assisted tools to investigate natural compounds as potential therapeutic candidates.</p>
+                    <p>My academic journey combines experience as a lecturer in medical institutes with a growing research focus on <strong>computational drug discovery</strong>. I am currently engaged in in-silico research, employing molecular docking, molecular dynamics simulations, and AI-assisted tools to investigate natural compounds such as curcumin and methoxsalen derivatives as potential therapeutic candidates.</p>
                     <p>My research interests lie at the interface of molecular biology, chemistry, and computational modeling, where predictive simulations can accelerate and refine drug development strategies.</p>
                     <p>I strongly believe that the future of biomedical research lies in the integration of wet-lab experimentation and computational innovation. Beyond academic work, I am an avid reader and advocate for science education and public health awareness.</p>
                     <a href="#" class="btn" style="margin-top: 20px;">Download CV <i class="fas fa-download"></i></a>
@@ -783,36 +1023,137 @@
             <div class="section-title">
                 <h2>Education</h2>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date">Aug 2017 - Sep 2021</span>
-                        <h4>Bachelor of Science (B.Sc.)</h4>
-                        <p class="institution">Gono Bishwabidyalay, Savar, Dhaka</p>
-                        <p>Biochemistry & Molecular Biology (BMB)</p>
-                        <p><strong>CGPA:</strong> 3.71 / 4.00</p>
+            <div class="education-grid">
+                <div class="education-card">
+                    <span class="period">2017 - 2021</span>
+                    <h4>Bachelor of Science (B.Sc.)</h4>
+                    <p class="institution">Gono Bishwabidyalay, Savar, Dhaka</p>
+                    <p>Biochemistry & Molecular Biology (BMB)</p>
+                    <p class="gpa"><i class="fas fa-award"></i> CGPA: 3.71 / 4.00</p>
+                </div>
+                
+                <div class="education-card">
+                    <span class="period">2012 - 2016</span>
+                    <h4>Diploma in Laboratory Medicine</h4>
+                    <p class="institution">Chandana Institute of Medical Technology (CIMT)</p>
+                    <p>Higher Secondary Level</p>
+                    <p class="gpa"><i class="fas fa-award"></i> GPA: 3.81 / 4.00</p>
+                    <p>Focused learning and practical training in laboratory medicine, laying the foundation for career in healthcare diagnostics.</p>
+                </div>
+                
+                <div class="education-card">
+                    <span class="period">2006 - 2012</span>
+                    <h4>Secondary School Certificate (SSC)</h4>
+                    <p class="institution">M. E. H Arif College, Konabari, Gazipur</p>
+                    <p>Science Group</p>
+                    <p class="gpa"><i class="fas fa-award"></i> GPA: 4.44 / 5.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRAINING & CERTIFICATION SECTION ===== -->
+    <section class="section" id="training">
+        <div class="container">
+            <div class="section-title">
+                <h2>Training & Certifications</h2>
+            </div>
+            <div class="training-grid">
+                <!-- Training 1 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Biosafety & Biosecurity</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> Bangladesh Biosafety and Biosecurity Society</p>
+                        <p class="date"><i class="fas fa-calendar"></i> July 29, 2025</p>
+                        <p class="duration"><i class="fas fa-clock"></i> CEU: 6.4 credits</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Role: Certified Trainer (Train-the-Trainer)</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date">Completed</span>
-                        <h4>SSC in Science</h4>
-                        <p class="institution">Professor M E H Arif High School</p>
-                        <p><strong>CGPA:</strong> 4.44 / 5.00</p>
+
+                <!-- Training 2 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Computer Office Application Specialist</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> Bangladesh Technical Education Board</p>
+                        <p class="date"><i class="fas fa-calendar"></i> August 23, 2022</p>
+                        <p class="duration"><i class="fas fa-clock"></i> 350 Hours | Grade: A+</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">National Skill Standard Basic Course</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date">6 Months Training</span>
-                        <h4>Computer Office Application</h4>
-                        <p class="institution">East West Technical Institute, Dhaka</p>
+
+                <!-- Training 3 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Bioinformatics & Drug Design</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> Dawn of Bioinformatics Limited</p>
+                        <p class="date"><i class="fas fa-calendar"></i> October 26, 2024</p>
+                        <p class="duration"><i class="fas fa-clock"></i> 4 Days (Online)</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Computer Aided Drug Design A to Z</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date">14 Hours Training</span>
-                        <h4>Speaking Fluency</h4>
-                        <p class="institution">British Council, Uttara</p>
+
+                <!-- Training 4 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Student Research Ambassador</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> National Student Research Institute (NSRI)</p>
+                        <p class="date"><i class="fas fa-calendar"></i> January 2026</p>
+                        <p class="duration"><i class="fas fa-award"></i> Associate Member</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Research Ambassador Program</p>
+                    </div>
+                </div>
+
+                <!-- Training 5 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Advanced English Speaker (B2 Level)</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> British Council, Bangladesh</p>
+                        <p class="date"><i class="fas fa-calendar"></i> Feb 27 - Mar 7, 2017</p>
+                        <p class="duration"><i class="fas fa-clock"></i> 14 Hours</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Speaking Fluency Course</p>
+                    </div>
+                </div>
+
+                <!-- Training 6 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Medication Safety for NTDs</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> World Health Organization (WHO)</p>
+                        <p class="date"><i class="fas fa-calendar"></i> April 6, 2022</p>
+                        <p class="duration"><i class="fas fa-globe"></i> WHO Certified</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Safety in administering medicines for neglected tropical diseases</p>
+                    </div>
+                </div>
+
+                <!-- Training 7 -->
+                <div class="training-card">
+                    <div class="training-image">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="training-content">
+                        <h4>Medical Campaign Organizer</h4>
+                        <p class="issuer"><i class="fas fa-certificate"></i> Bhawal Gazipur Medical Institute (BGMI)</p>
+                        <p class="date"><i class="fas fa-calendar"></i> Outstanding Achievement</p>
+                        <p class="duration"><i class="fas fa-trophy"></i> Campaign Leadership</p>
+                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Outstanding Blood Grouping Campaign Organizer</p>
                     </div>
                 </div>
             </div>
@@ -820,7 +1161,7 @@
     </section>
 
     <!-- ===== EXPERIENCE SECTION ===== -->
-    <section class="section" id="experience">
+    <section class="section" id="experience" style="background: white;">
         <div class="container">
             <div class="section-title">
                 <h2>Professional Experience</h2>
@@ -831,7 +1172,7 @@
                         <span class="date">Jan 2023 - Present</span>
                         <h4>Lecturer in Biochemistry</h4>
                         <p class="institution">Ideal MATS & PIMT, Bangladesh</p>
-                        <p>Delivering engaging lectures on Biochemistry and Molecular Biology, evaluating student performance, and facilitating academic growth through interactive discussions.</p>
+                        <p>Delivering engaging lectures on Biochemistry and Molecular Biology, evaluating student performance, and facilitating academic growth.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -839,7 +1180,7 @@
                         <span class="date">Oct 2021 - Dec 2023</span>
                         <h4>Lecturer in Biochemistry & Molecular Biology</h4>
                         <p class="institution">Bhawal Gazipur Medical Institute (BGMI)</p>
-                        <p>Conducted lectures, designed assessments, and provided constructive feedback to students in Biochemistry and Molecular Biology courses.</p>
+                        <p>Conducted lectures, designed assessments, and provided constructive feedback to students.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -863,7 +1204,7 @@
     </section>
 
     <!-- ===== SKILLS SECTION ===== -->
-    <section class="section" id="skills" style="background: white;">
+    <section class="section" id="skills">
         <div class="container">
             <div class="section-title">
                 <h2>Skills & Expertise</h2>
@@ -882,19 +1223,36 @@
                         <li>DNA/RNA Extraction</li>
                     </ul>
                 </div>
+                
                 <div class="skill-card">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-microscope"></i>
                     <h4>Computational Skills</h4>
                     <ul>
+                        <li><strong>MD Simulation</strong></li>
                         <li>Molecular Docking</li>
                         <li>Virtual Screening</li>
                         <li>ADMET Prediction</li>
-                        <li>Molecular Dynamics (MD)</li>
                         <li>AI-Assisted Drug Design</li>
                         <li>Bioinformatics Tools</li>
                         <li>Data Analysis & Visualization</li>
                     </ul>
                 </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Software Expertise</h4>
+                    <ul>
+                        <li>GROMACS</li>
+                        <li>AMBER</li>
+                        <li>Origin Pro</li>
+                        <li>AutoDock Vina</li>
+                        <li>Discovery Studio</li>
+                        <li>PyMOL</li>
+                        <li>BioPython</li>
+                        <li>HTML</li>
+                    </ul>
+                </div>
+                
                 <div class="skill-card">
                     <i class="fas fa-brain"></i>
                     <h4>Research Areas</h4>
@@ -902,23 +1260,34 @@
                         <li>Computational Drug Discovery</li>
                         <li>Natural Product Research</li>
                         <li>Protein-Ligand Interactions</li>
-                        <li>Organ-on-a-Chip Technology</li>
-                        <li>AI-Designed Proteins</li>
+                        <li>Molecular Dynamics</li>
                         <li>Cancer & Bacterial Pathways</li>
                         <li>Science Communication</li>
+                        <li>Public Health Awareness</li>
                     </ul>
                 </div>
+                
                 <div class="skill-card">
                     <i class="fas fa-language"></i>
-                    <h4>Languages & Soft Skills</h4>
+                    <h4>Languages</h4>
                     <ul>
                         <li>Bangla (Native)</li>
                         <li>English (Professional)</li>
-                        <li>Hindi & Urdu (Proficient)</li>
+                        <li>Hindi (Proficient)</li>
+                        <li>Urdu (Proficient)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Soft Skills</h4>
+                    <ul>
                         <li>Academic Writing</li>
                         <li>Research Leadership</li>
                         <li>Team Collaboration</li>
                         <li>Problem Solving</li>
+                        <li>Teaching & Mentoring</li>
+                        <li>Science Communication</li>
                     </ul>
                 </div>
             </div>
@@ -926,64 +1295,210 @@
     </section>
 
     <!-- ===== RESEARCH SECTION ===== -->
-    <section class="section" id="research">
+    <section class="section" id="research" style="background: white;">
         <div class="container">
             <div class="section-title">
                 <h2>Research Focus</h2>
             </div>
-            <div class="research-highlights">
-                <h4><i class="fas fa-microscope"></i> Current Research Projects</h4>
-                <p>Investigating natural compounds such as <strong>curcumin</strong> and <strong>methoxsalen derivatives</strong> as potential therapeutic candidates targeting bacterial enzymes and cancer-related pathways using computational approaches.</p>
-                <p>Employing <strong>molecular docking</strong>, <strong>molecular dynamics simulations</strong> (up to 500ns), and <strong>AI-assisted tools</strong> to accelerate drug development strategies through predictive modeling.</p>
-                <div class="research-tags">
-                    <span class="tag">Molecular Docking</span>
-                    <span class="tag">MD Simulations</span>
-                    <span class="tag">Virtual Screening</span>
-                    <span class="tag">ADMET Analysis</span>
-                    <span class="tag">Natural Products</span>
-                    <span class="tag">Drug Discovery</span>
-                    <span class="tag">AI/ML in Biology</span>
+            <div class="research-container">
+                <!-- Research 1 -->
+                <div class="research-card">
+                    <div class="research-images">
+                        <div class="research-img"><i class="fas fa-molecule"></i></div>
+                        <div class="research-img"><i class="fas fa-dna"></i></div>
+                        <div class="research-img"><i class="fas fa-protein"></i></div>
+                    </div>
+                    <div class="research-content">
+                        <h4><i class="fas fa-flask"></i> Computational Drug Discovery</h4>
+                        <p>Investigating natural compounds such as <strong>curcumin</strong> and <strong>methoxsalen derivatives</strong> as potential therapeutic candidates targeting bacterial enzymes and cancer-related pathways using computational approaches.</p>
+                        <p>Employing <strong>molecular docking</strong>, <strong>molecular dynamics simulations</strong> (up to 500ns), and <strong>AI-assisted tools</strong> to accelerate drug development strategies.</p>
+                        <div class="research-tags">
+                            <span class="tag">Molecular Docking</span>
+                            <span class="tag">MD Simulations</span>
+                            <span class="tag">Virtual Screening</span>
+                            <span class="tag">Drug Design</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="research-highlights">
-                <h4><i class="fas fa-lightbulb"></i> Research Philosophy</h4>
-                <p>I believe the future of biomedical research lies in the <strong>integration of wet-lab experimentation and computational innovation</strong>. My approach combines traditional biochemical techniques with cutting-edge in-silico methodologies to refine and accelerate therapeutic discovery.</p>
-                <p>Committed to making scientific knowledge accessible through science communication, public health awareness initiatives, and educational outreach programs.</p>
+
+                <!-- Research 2 -->
+                <div class="research-card">
+                    <div class="research-images">
+                        <div class="research-img"><i class="fas fa-seedling"></i></div>
+                        <div class="research-img"><i class="fas fa-leaf"></i></div>
+                        <div class="research-img"><i class="fas fa-prescription-bottle-alt"></i></div>
+                    </div>
+                    <div class="research-content">
+                        <h4><i class="fas fa-leaf"></i> Natural Product Research</h4>
+                        <p>Exploring bioactive compounds from medicinal plants including <strong>Moringa oleifera</strong> and other natural sources for their therapeutic potential against infectious diseases and chronic conditions.</p>
+                        <p>Combining traditional knowledge with modern computational techniques to identify novel drug candidates from natural sources.</p>
+                        <div class="research-tags">
+                            <span class="tag">Natural Compounds</span>
+                            <span class="tag">Phytochemicals</span>
+                            <span class="tag">ADMET Analysis</span>
+                            <span class="tag">Bioactivity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research 3 -->
+                <div class="research-card">
+                    <div class="research-images">
+                        <div class="research-img"><i class="fas fa-virus"></i></div>
+                        <div class="research-img"><i class="fas fa-bacterium"></i></div>
+                        <div class="research-img"><i class="fas fa-shield-virus"></i></div>
+                    </div>
+                    <div class="research-content">
+                        <h4><i class="fas fa-bacteria"></i> Antimicrobial Research</h4>
+                        <p>Studying bacterial pathogenicity and developing computational strategies to combat antimicrobial resistance through targeted drug design against resistant bacterial strains.</p>
+                        <p>Focus on <strong>Klebsiella pneumoniae</strong> and other priority pathogens identified by WHO.</p>
+                        <div class="research-tags">
+                            <span class="tag">Antimicrobial Resistance</span>
+                            <span class="tag">Bacterial Targets</span>
+                            <span class="tag">Pathogen Studies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research 4 -->
+                <div class="research-card">
+                    <div class="research-images">
+                        <div class="research-img"><i class="fas fa-brain"></i></div>
+                        <div class="research-img"><i class="fas fa-robot"></i></div>
+                        <div class="research-img"><i class="fas fa-network-wired"></i></div>
+                    </div>
+                    <div class="research-content">
+                        <h4><i class="fas fa-microchip"></i> AI in Drug Discovery</h4>
+                        <p>Integrating artificial intelligence and machine learning approaches with traditional computational methods to enhance prediction accuracy and accelerate the drug discovery pipeline.</p>
+                        <p>Exploring AI-designed proteins and machine learning models for ADMET prediction.</p>
+                        <div class="research-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">AI Tools</span>
+                            <span class="tag">Predictive Modeling</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===== PUBLICATIONS SECTION ===== -->
-    <section class="section" id="publications" style="background: white;">
+    <section class="section" id="publications">
         <div class="container">
             <div class="section-title">
                 <h2>Publications</h2>
             </div>
+            
+            <!-- Publication 1 -->
             <div class="publication-card">
-                <h4>Effects of Supplementing Layers With Varying Levels of Alfalfa and Moringa Fresh Leaves on Egg Production and Quality</h4>
-                <p class="authors">Alemayehu Guteta, Mahedi Hassan, Khokon Hossain, Mammo Mengesha Erdaw</p>
-                <p class="journal">Poultry Science Research | December 2023</p>
-                <p>Feeding trial evaluating effects of Medicago sativa (Alfalfa) and Moringa stenopetala fresh leaves on commercial layer chicken egg characteristics using 3x3 factorial design.</p>
-                <span class="status">Full-text Available</span>
+                <h4>Effects of Supplementing Layers with Varying Levels of Alfalfa and Moringa Fresh Leaves on Egg Production and Quality</h4>
+                <p class="authors"><i class="fas fa-users"></i> Alemayehu Guteta, Mahedi Hassan, Khokon Hossain, Mammo Mengesha Erdaw</p>
+                <p class="journal"><i class="fas fa-book"></i> Poultry Science Research | December 2023</p>
+                <p class="abstract"><strong>Abstract:</strong> This feeding trial was conducted to evaluate and demonstrate the effects of supplementing intensively managed commercial layer chickens with varying levels of fresh leaves of Medicago sativa (Alfalfa) and Moringa stenopetala on the characteristics of eggs. A 3x3 factorial arrangement was used with levels of Alfalfa fresh leaves at 0, 200, or 400 g.</p>
+                <span class="status"><i class="fas fa-check-circle"></i> Full-text Available</span>
             </div>
+
+            <!-- Publication 2 -->
             <div class="publication-card">
                 <h4>Identification, Pathogenicity, Public Health and Economic Importance of Tapeworms of Poultry</h4>
-                <p class="authors">Daniel Tamirat, Mahedi Hassan, Saima Akter Bristy, Md Khokon Hossain</p>
-                <p class="journal">Veterinary Parasitology | February 2024</p>
-                <p>Comprehensive review of poultry tapeworm genera (Davainea, Hymenolepis, Amoebotaenia, Choanotaenia, Raillietina) prevalent in tropical regions, addressing economic impacts and control strategies.</p>
-                <span class="status">Full-text Available</span>
+                <p class="authors"><i class="fas fa-users"></i> Daniel Tamirat, Mahedi Hassan, Saima Akter Bristy, Md Khokon Hossain, Md. Raquibul Islam</p>
+                <p class="journal"><i class="fas fa-book"></i> Veterinary Parasitology | February 2024</p>
+                <p class="abstract"><strong>Abstract:</strong> Tapeworms of poultry, prevalent in Ethiopia and other tropical regions, pose significant economic and health challenges. They parasitize the intestinal tract of birds, leading to reduced production, growth retardation, weight loss, and mortality. Common genera include Davainea, Hymenolepis, Amoebotaenia, Choanotaenia, and Raillietina, with complex life cycles requiring intermediate hosts.</p>
+                <span class="status"><i class="fas fa-check-circle"></i> Full-text Available</span>
             </div>
-            <div class="publication-card">
-                <h4>Computational Investigation of Natural Compounds Against Bacterial Targets</h4>
-                <p class="authors">Mahedi Hassan et al.</p>
-                <p class="journal">In Preparation | Computational Biology</p>
-                <p>In-silico study employing molecular docking and dynamics simulations to evaluate flavonoids and phytochemicals from Moringa oleifera against Klebsiella pneumoniae target proteins.</p>
-                <span class="status">Under Review</span>
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
+
+            <div style="text-align: center; margin-top: 40px;">
                 <a href="https://www.researchgate.net/profile/Mahedi-Hassan-6" target="_blank" class="btn btn-outline">
-                    View All Publications <i class="fas fa-external-link-alt"></i>
+                    View All on ResearchGate <i class="fas fa-external-link-alt"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTERNAL COLLABORATION SECTION ===== -->
+    <section class="section" id="collaboration" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Internal Collaborations</h2>
+            </div>
+            <div class="collaboration-grid">
+                <!-- Collaboration 1 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-images">
+                        <div class="collab-img"><i class="fas fa-university"></i></div>
+                        <div class="collab-img"><i class="fas fa-flask"></i></div>
+                        <div class="collab-img"><i class="fas fa-microscope"></i></div>
+                    </div>
+                    <div class="collaboration-content">
+                        <h4>Gono Bishwabidyalay</h4>
+                        <p>Department of Biochemistry and Molecular Biology - Academic research collaboration and thesis supervision.</p>
+                    </div>
+                </div>
+
+                <!-- Collaboration 2 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-images">
+                        <div class="collab-img"><i class="fas fa-hospital"></i></div>
+                        <div class="collab-img"><i class="fas fa-user-md"></i></div>
+                        <div class="collab-img"><i class="fas fa-procedures"></i></div>
+                    </div>
+                    <div class="collaboration-content">
+                        <h4>Bhawal Gazipur Medical Institute</h4>
+                        <p>Teaching and research collaboration in medical biochemistry and laboratory diagnostics.</p>
+                    </div>
+                </div>
+
+                <!-- Collaboration 3 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-images">
+                        <div class="collab-img"><i class="fas fa-laptop-code"></i></div>
+                        <div class="collab-img"><i class="fas fa-dna"></i></div>
+                        <div class="collab-img"><i class="fas fa-code"></i></div>
+                    </div>
+                    <div class="collaboration-content">
+                        <h4>Dawn of Bioinformatics</h4>
+                        <p>Computational biology and drug design training partnership with focus on in-silico research methods.</p>
+                    </div>
+                </div>
+
+                <!-- Collaboration 4 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-images">
+                        <div class="collab-img"><i class="fas fa-globe"></i></div>
+                        <div class="collab-img"><i class="fas fa-handshake"></i></div>
+                        <div class="collab-img"><i class="fas fa-research-project"></i></div>
+                    </div>
+                    <div class="collaboration-content">
+                        <h4>Genexa Foundation</h4>
+                        <p>International research collaboration in Saudi Arabia for computational drug design projects.</p>
+                    </div>
+                </div>
+
+                <!-- Collaboration 5 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-images">
+                        <div class="collab-img"><i class="fas fa-shield-alt"></i></div>
+                        <div class="collab-img"><i class="fas fa-certificate"></i></div>
+                        <div class="collab-img"><i class="fas fa-graduation-cap"></i></div>
+                    </div>
+                    <div class="collaboration-content">
+                        <h4>Bangladesh Biosafety Society</h4>
+                        <p>Training collaboration for biosafety and biosecurity certification programs.</p>
+                    </div>
+                </div>
+
+                <!-- Collaboration 6 -->
+                <div class="collaboration-card">
+                    <div class="collaboration-images">
+                        <div class="collab-img"><i class="fas fa-user-graduate"></i></div>
+                        <div class="collab-img"><i class="fas fa-award"></i></div>
+                        <div class="collab-img"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="collaboration-content">
+                        <h4>National Student Research Institute</h4>
+                        <p>Student research ambassador program and academic networking initiatives.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1000,24 +1515,20 @@
                     <p>Gazipur Sadar, Dhaka, Bangladesh</p>
                     
                     <h4><i class="fas fa-envelope"></i> Email</h4>
-                    <p>
-                        <a href="mailto:mahedimasum24@gmail.com">mahedimasum24@gmail.com</a><br>
-                        <a href="mailto:mahedihassanazan@gmail.com">mahedihassanazan@gmail.com</a><br>
-                        <a href="mailto:insilicoscholarshub@gmail.com" style="color: var(--accent);">insilicoscholarshub@gmail.com</a>
-                    </p>
+                    <p><a href="mailto:biomahedihassan@gmail.com">biomahedihassan@gmail.com</a></p>
                     
                     <h4><i class="fas fa-phone"></i> Phone</h4>
                     <p><a href="tel:+8801575780459">+880 1575-780459</a></p>
                     
-                    <h4><i class="fas fa-briefcase"></i> Professional Services</h4>
-                    <p>Available for research collaborations, computational biology consulting, and academic positions in healthcare/medical fields.</p>
+                    <h4><i class="fas fa-briefcase"></i> Professional Interests</h4>
+                    <p>Available for research collaborations, computational biology consulting, academic positions in healthcare/medical fields, and drug discovery projects.</p>
                     
                     <div class="social-links">
                         <a href="https://www.researchgate.net/profile/Mahedi-Hassan-6" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" title="Google Scholar"><i class="fab fa-google"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="mailto:mahedimasum24@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:biomahedihassan@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -1048,8 +1559,7 @@
             <p>&copy; 2026 Mahedi Hassan. All Rights Reserved.</p>
             <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Science & Innovation</p>
             <p style="font-size: 0.9rem; opacity: 0.8;">
-                <a href="#home">Back to Top</a> | 
-                <a href="https://sites.google.com/view/biomahedihassan/home" target="_blank">Previous Site</a>
+                <a href="#home">Back to Top</a>
             </p>
         </div>
     </footer>
@@ -1119,7 +1629,7 @@
         // Form Submission Handler
         document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! This is a demo form. In production, this would connect to a backend service or mailto link.');
+            alert('Thank you for your message! This is a demo form. In production, this would send to biomahedihassan@gmail.com');
             this.reset();
         });
         
