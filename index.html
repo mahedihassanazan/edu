@@ -374,7 +374,7 @@
         
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             background: var(--dark);
             display: flex;
@@ -1182,7 +1182,7 @@
         </div>
     </section>
 
-      <!-- ===== MD SIMULATION VIDEOS SECTION ===== -->
+    <!-- ===== MD SIMULATION VIDEOS SECTION (AUTOPLAY ENABLED) ===== -->
     <section class="section" id="md-videos" style="background: white;">
         <div class="container">
             <div class="section-title">
@@ -1193,8 +1193,15 @@
                 <!-- Video 1: Protein-Ligand Simulation -->
                 <div class="video-card">
                     <div class="video-container">
-                        <!-- ✅ ভিডিও ট্যাগ আনকমেন্ট করা হয়েছে -->
-                        <video src="videos/protein.mp4" controls poster="images/protein-thumb.jpg" preload="metadata">
+                        <video 
+                            src="videos/protein.mp4" 
+                            controls 
+                            autoplay 
+                            muted 
+                            playsinline 
+                            loop 
+                            poster="images/protein-thumb.jpg" 
+                            preload="metadata">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -1212,8 +1219,15 @@
                 <!-- Video 2: Nanotube Simulation -->
                 <div class="video-card">
                     <div class="video-container">
-                        <!-- ✅ ভিডিও ট্যাগ আনকমেন্ট করা হয়েছে -->
-                        <video src="videos/Nanotube.mp4" controls poster="images/nanotube-thumb.jpg" preload="metadata">
+                        <video 
+                            src="videos/Nanotube.mp4" 
+                            controls 
+                            autoplay 
+                            muted 
+                            playsinline 
+                            loop 
+                            poster="images/nanotube-thumb.jpg" 
+                            preload="metadata">
                             Your browser does not support the video tag.
                         </video>
                     </div>
