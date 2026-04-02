@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mahedi Hassan - Biochemist | Computational Drug Discovery Researcher | Lecturer">
+    <meta name="description" content="Mahedi Hassan - Biochemist | Computational Drug Discovery Researcher">
     <title>Mahedi Hassan | Biochemist & Researcher</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -22,11 +22,7 @@
             --transition: all 0.3s ease;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,15 +32,8 @@
         }
         
         /* ===== UTILITIES ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; }
         
         .section-title {
             text-align: center;
@@ -126,9 +115,7 @@
             text-decoration: none;
         }
         
-        .logo span {
-            color: var(--accent);
-        }
+        .logo span { color: var(--accent); }
         
         .nav-links {
             display: flex;
@@ -147,9 +134,7 @@
         }
         
         .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
+        .nav-links a.active { color: var(--primary); }
         
         .nav-links a::after {
             content: '';
@@ -162,9 +147,7 @@
             transition: var(--transition);
         }
         
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
         
         .mobile-toggle {
             display: none;
@@ -181,10 +164,7 @@
             text-align: center;
         }
         
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .hero-content { max-width: 800px; margin: 0 auto; }
         
         .hero h1 {
             font-size: 3rem;
@@ -255,22 +235,30 @@
             color: var(--gray);
         }
         
-        .about-image {
-            text-align: center;
-        }
+        .about-image { text-align: center; }
         
-        .about-image .placeholder {
+        .about-image img {
             width: 250px;
             height: 250px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            box-shadow: var(--shadow-hover);
+            border: 4px solid white;
+        }
+        
+        .about-image .img-placeholder {
+            width: 250px;
+            height: 250px;
+            background: var(--light-gray);
             border-radius: 50%;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 4rem;
-            box-shadow: var(--shadow-hover);
+            color: var(--gray);
+            font-size: 0.9rem;
+            border: 2px dashed var(--primary);
         }
         
         /* ===== EDUCATION SECTION ===== */
@@ -348,34 +336,34 @@
         .training-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
-            position: relative;
             overflow: hidden;
         }
         
-        .training-image i {
-            z-index: 2;
-            position: relative;
-        }
-        
-        .training-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .training-image img {
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.1);
+            object-fit: cover;
         }
         
-        .training-content {
-            padding: 20px;
+        .training-image .img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 10px;
+            background: var(--light-gray);
+            border: 2px dashed var(--primary);
         }
+        
+        .training-content { padding: 20px; }
         
         .training-content h4 {
             color: var(--primary);
@@ -390,15 +378,11 @@
             font-size: 0.95rem;
         }
         
-        .training-content .date {
+        .training-content .date,
+        .training-content .duration {
             color: var(--gray);
             font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .training-content .duration {
-            color: var(--secondary);
-            font-size: 0.9rem;
+            margin-bottom: 5px;
         }
         
         /* ===== EXPERIENCE SECTION ===== */
@@ -430,9 +414,7 @@
             text-align: right;
         }
         
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
+        .timeline-item:nth-child(even) { left: 50%; }
         
         .timeline-item::before {
             content: '';
@@ -446,13 +428,8 @@
             z-index: 1;
         }
         
-        .timeline-item:nth-child(odd)::before {
-            right: -8px;
-        }
-        
-        .timeline-item:nth-child(even)::before {
-            left: -8px;
-        }
+        .timeline-item:nth-child(odd)::before { right: -8px; }
+        .timeline-item:nth-child(even)::before { left: -8px; }
         
         .timeline-content {
             background: white;
@@ -576,24 +553,34 @@
         
         .research-img {
             height: 150px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2rem;
-            border-radius: 5px;
             overflow: hidden;
-            position: relative;
         }
         
-        .research-img i {
-            z-index: 2;
+        .research-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .research-content {
-            padding: 25px;
+        .research-img .img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 5px;
+            background: var(--light-gray);
+            border: 1px dashed var(--primary);
         }
+        
+        .research-content { padding: 25px; }
         
         .research-content h4 {
             color: var(--primary);
@@ -604,9 +591,7 @@
             gap: 10px;
         }
         
-        .research-content h4 i {
-            color: var(--accent);
-        }
+        .research-content h4 i { color: var(--accent); }
         
         .research-content p {
             color: var(--gray);
@@ -713,23 +698,38 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 5px;
             padding: 5px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--light-gray);
             height: 180px;
         }
         
         .collab-img {
-            background: rgba(255,255,255,0.2);
+            background: var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2rem;
-            border-radius: 5px;
+            overflow: hidden;
         }
         
-        .collaboration-content {
-            padding: 20px;
+        .collab-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
+        
+        .collab-img .img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 0.7rem;
+            text-align: center;
+            padding: 3px;
+            border: 1px dashed var(--primary);
+        }
+        
+        .collaboration-content { padding: 20px; }
         
         .collaboration-content h4 {
             color: var(--primary);
@@ -781,9 +781,7 @@
             transition: var(--transition);
         }
         
-        .contact-item a:hover {
-            color: var(--primary);
-        }
+        .contact-item a:hover { color: var(--primary); }
         
         .social-links {
             display: flex;
@@ -811,9 +809,7 @@
             transform: translateY(-3px);
         }
         
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
+        .contact-form .form-group { margin-bottom: 20px; }
         
         .contact-form input,
         .contact-form textarea {
@@ -847,46 +843,24 @@
             margin-top: 50px;
         }
         
-        footer p {
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-        
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        footer p { opacity: 0.9; margin-bottom: 10px; }
+        footer a { color: var(--accent); text-decoration: none; }
         
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
             .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
+            .contact-container { grid-template-columns: 1fr; }
+            .about-image { order: -1; }
             
-            .about-image {
-                order: -1;
-            }
-            
-            .timeline::before {
-                left: 31px;
-            }
-            
+            .timeline::before { left: 31px; }
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
                 text-align: left !important;
             }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::before {
-                left: 23px !important;
-                right: auto !important;
-            }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::before { left: 23px !important; right: auto !important; }
         }
         
         @media (max-width: 768px) {
@@ -904,47 +878,24 @@
                 transition: var(--transition);
                 box-shadow: var(--shadow);
             }
+            .nav-links.active { left: 0; }
+            .mobile-toggle { display: block; }
             
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
+            .hero h1 { font-size: 2.3rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+            .section { padding: 60px 0; }
+            .section-title h2 { font-size: 1.8rem; }
             
             .education-grid,
-            .training-grid {
-                grid-template-columns: 1fr;
-            }
+            .training-grid { grid-template-columns: 1fr; }
         }
         
         @media (max-width: 480px) {
-            .hero {
-                padding: 150px 0 80px;
-            }
-            
+            .hero { padding: 150px 0 80px; }
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
             .hero-buttons .btn {
                 width: 100%;
                 max-width: 280px;
@@ -1008,10 +959,12 @@
                     <a href="#" class="btn" style="margin-top: 20px;">Download CV <i class="fas fa-download"></i></a>
                 </div>
                 <div class="about-image">
-                    <div class="placeholder">
-                        <i class="fas fa-user"></i>
+                    <!-- 🔹 PROFILE PHOTO: Replace src with your image path -->
+                    <!-- Example: <img src="images/profile.jpg" alt="Mahedi Hassan"> -->
+                    <div class="img-placeholder">
+                        [Your Profile Photo]<br>
+                        <small>Replace with: images/profile.jpg</small>
                     </div>
-                    <p style="margin-top: 15px; color: var(--gray); font-style: italic;">[Your Professional Photo]</p>
                 </div>
             </div>
         </div>
@@ -1059,10 +1012,12 @@
                 <h2>Training & Certifications</h2>
             </div>
             <div class="training-grid">
+                
                 <!-- Training 1 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-shield-virus"></i>
+                        <!-- 🔹 Replace with: images/training-biosafety.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-biosafety.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Biosafety & Biosecurity</h4>
@@ -1076,7 +1031,8 @@
                 <!-- Training 2 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-laptop-code"></i>
+                        <!-- 🔹 Replace with: images/training-computer.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-computer.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Computer Office Application Specialist</h4>
@@ -1090,7 +1046,8 @@
                 <!-- Training 3 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-dna"></i>
+                        <!-- 🔹 Replace with: images/training-bioinformatics.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-bioinformatics.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Bioinformatics & Drug Design</h4>
@@ -1104,7 +1061,8 @@
                 <!-- Training 4 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-user-graduate"></i>
+                        <!-- 🔹 Replace with: images/training-nsri.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-nsri.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Student Research Ambassador</h4>
@@ -1118,7 +1076,8 @@
                 <!-- Training 5 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-language"></i>
+                        <!-- 🔹 Replace with: images/training-british-council.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-british-council.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Advanced English Speaker (B2 Level)</h4>
@@ -1132,7 +1091,8 @@
                 <!-- Training 6 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-pills"></i>
+                        <!-- 🔹 Replace with: images/training-who.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-who.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Medication Safety for NTDs</h4>
@@ -1146,7 +1106,8 @@
                 <!-- Training 7 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <i class="fas fa-hand-holding-heart"></i>
+                        <!-- 🔹 Replace with: images/training-bgmi.jpg -->
+                        <div class="img-placeholder">[Certificate Image]<br><small>training-bgmi.jpg</small></div>
                     </div>
                     <div class="training-content">
                         <h4>Medical Campaign Organizer</h4>
@@ -1156,6 +1117,7 @@
                         <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Outstanding Blood Grouping Campaign Organizer</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1301,12 +1263,14 @@
                 <h2>Research Focus</h2>
             </div>
             <div class="research-container">
+                
                 <!-- Research 1 -->
                 <div class="research-card">
                     <div class="research-images">
-                        <div class="research-img"><i class="fas fa-molecule"></i></div>
-                        <div class="research-img"><i class="fas fa-dna"></i></div>
-                        <div class="research-img"><i class="fas fa-protein"></i></div>
+                        <!-- 🔹 Replace with your 3 research images -->
+                        <div class="research-img"><div class="img-placeholder">[Image 1]<br><small>research1-img1.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 2]<br><small>research1-img2.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 3]<br><small>research1-img3.jpg</small></div></div>
                     </div>
                     <div class="research-content">
                         <h4><i class="fas fa-flask"></i> Computational Drug Discovery</h4>
@@ -1324,9 +1288,9 @@
                 <!-- Research 2 -->
                 <div class="research-card">
                     <div class="research-images">
-                        <div class="research-img"><i class="fas fa-seedling"></i></div>
-                        <div class="research-img"><i class="fas fa-leaf"></i></div>
-                        <div class="research-img"><i class="fas fa-prescription-bottle-alt"></i></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 1]<br><small>research2-img1.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 2]<br><small>research2-img2.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 3]<br><small>research2-img3.jpg</small></div></div>
                     </div>
                     <div class="research-content">
                         <h4><i class="fas fa-leaf"></i> Natural Product Research</h4>
@@ -1344,9 +1308,9 @@
                 <!-- Research 3 -->
                 <div class="research-card">
                     <div class="research-images">
-                        <div class="research-img"><i class="fas fa-virus"></i></div>
-                        <div class="research-img"><i class="fas fa-bacterium"></i></div>
-                        <div class="research-img"><i class="fas fa-shield-virus"></i></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 1]<br><small>research3-img1.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 2]<br><small>research3-img2.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 3]<br><small>research3-img3.jpg</small></div></div>
                     </div>
                     <div class="research-content">
                         <h4><i class="fas fa-bacteria"></i> Antimicrobial Research</h4>
@@ -1363,9 +1327,9 @@
                 <!-- Research 4 -->
                 <div class="research-card">
                     <div class="research-images">
-                        <div class="research-img"><i class="fas fa-brain"></i></div>
-                        <div class="research-img"><i class="fas fa-robot"></i></div>
-                        <div class="research-img"><i class="fas fa-network-wired"></i></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 1]<br><small>research4-img1.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 2]<br><small>research4-img2.jpg</small></div></div>
+                        <div class="research-img"><div class="img-placeholder">[Image 3]<br><small>research4-img3.jpg</small></div></div>
                     </div>
                     <div class="research-content">
                         <h4><i class="fas fa-microchip"></i> AI in Drug Discovery</h4>
@@ -1378,6 +1342,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1422,12 +1387,13 @@
                 <h2>Internal Collaborations</h2>
             </div>
             <div class="collaboration-grid">
+                
                 <!-- Collaboration 1 -->
                 <div class="collaboration-card">
                     <div class="collaboration-images">
-                        <div class="collab-img"><i class="fas fa-university"></i></div>
-                        <div class="collab-img"><i class="fas fa-flask"></i></div>
-                        <div class="collab-img"><i class="fas fa-microscope"></i></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 1]<br><small>collab1-1.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 2]<br><small>collab1-2.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 3]<br><small>collab1-3.jpg</small></div></div>
                     </div>
                     <div class="collaboration-content">
                         <h4>Gono Bishwabidyalay</h4>
@@ -1438,9 +1404,9 @@
                 <!-- Collaboration 2 -->
                 <div class="collaboration-card">
                     <div class="collaboration-images">
-                        <div class="collab-img"><i class="fas fa-hospital"></i></div>
-                        <div class="collab-img"><i class="fas fa-user-md"></i></div>
-                        <div class="collab-img"><i class="fas fa-procedures"></i></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 1]<br><small>collab2-1.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 2]<br><small>collab2-2.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 3]<br><small>collab2-3.jpg</small></div></div>
                     </div>
                     <div class="collaboration-content">
                         <h4>Bhawal Gazipur Medical Institute</h4>
@@ -1451,9 +1417,9 @@
                 <!-- Collaboration 3 -->
                 <div class="collaboration-card">
                     <div class="collaboration-images">
-                        <div class="collab-img"><i class="fas fa-laptop-code"></i></div>
-                        <div class="collab-img"><i class="fas fa-dna"></i></div>
-                        <div class="collab-img"><i class="fas fa-code"></i></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 1]<br><small>collab3-1.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 2]<br><small>collab3-2.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 3]<br><small>collab3-3.jpg</small></div></div>
                     </div>
                     <div class="collaboration-content">
                         <h4>Dawn of Bioinformatics</h4>
@@ -1464,9 +1430,9 @@
                 <!-- Collaboration 4 -->
                 <div class="collaboration-card">
                     <div class="collaboration-images">
-                        <div class="collab-img"><i class="fas fa-globe"></i></div>
-                        <div class="collab-img"><i class="fas fa-handshake"></i></div>
-                        <div class="collab-img"><i class="fas fa-research-project"></i></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 1]<br><small>collab4-1.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 2]<br><small>collab4-2.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 3]<br><small>collab4-3.jpg</small></div></div>
                     </div>
                     <div class="collaboration-content">
                         <h4>Genexa Foundation</h4>
@@ -1477,9 +1443,9 @@
                 <!-- Collaboration 5 -->
                 <div class="collaboration-card">
                     <div class="collaboration-images">
-                        <div class="collab-img"><i class="fas fa-shield-alt"></i></div>
-                        <div class="collab-img"><i class="fas fa-certificate"></i></div>
-                        <div class="collab-img"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 1]<br><small>collab5-1.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 2]<br><small>collab5-2.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 3]<br><small>collab5-3.jpg</small></div></div>
                     </div>
                     <div class="collaboration-content">
                         <h4>Bangladesh Biosafety Society</h4>
@@ -1490,15 +1456,16 @@
                 <!-- Collaboration 6 -->
                 <div class="collaboration-card">
                     <div class="collaboration-images">
-                        <div class="collab-img"><i class="fas fa-user-graduate"></i></div>
-                        <div class="collab-img"><i class="fas fa-award"></i></div>
-                        <div class="collab-img"><i class="fas fa-users"></i></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 1]<br><small>collab6-1.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 2]<br><small>collab6-2.jpg</small></div></div>
+                        <div class="collab-img"><div class="img-placeholder">[Img 3]<br><small>collab6-3.jpg</small></div></div>
                     </div>
                     <div class="collaboration-content">
                         <h4>National Student Research Institute</h4>
                         <p>Student research ambassador program and academic networking initiatives.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1582,7 +1549,6 @@
             }
         });
         
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1591,7 +1557,7 @@
             });
         });
         
-        // Smooth Scroll for Navigation Links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1605,7 +1571,7 @@
             });
         });
         
-        // Active Link Highlighting on Scroll
+        // Active Link on Scroll
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-links a');
         
@@ -1617,7 +1583,6 @@
                     current = section.getAttribute('id');
                 }
             });
-            
             navItems.forEach(item => {
                 item.classList.remove('active');
                 if (item.getAttribute('href').slice(1) === current) {
@@ -1626,14 +1591,14 @@
             });
         });
         
-        // Form Submission Handler
+        // Form Handler
         document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! This is a demo form. In production, this would send to biomahedihassan@gmail.com');
+            alert('Thank you! Message would send to biomahedihassan@gmail.com');
             this.reset();
         });
         
-        // Initialize: Set Home as active
+        // Init
         document.querySelector('.nav-links a[href="#home"]').classList.add('active');
     </script>
 </body>
