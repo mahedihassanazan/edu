@@ -302,51 +302,140 @@
             line-height: 1.7;
         }
         
-        /* ===== MD SIMULATION ANALYSIS SECTION ===== */
-        .md-grid {
+        /* ===== MD SIMULATION ANALYSIS SECTION (GALLERY) ===== */
+        .md-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
+            margin-top: 20px;
         }
         
-        .md-card {
+        .md-gallery-item {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
         
-        .md-card:hover {
+        .md-gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
         
-        .md-image {
-            height: 220px;
+        .md-gallery-img {
+            height: 200px;
             background: var(--light-gray);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            position: relative;
+            cursor: pointer;
         }
         
-        .md-image img {
+        .md-gallery-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            transition: var(--transition);
         }
         
-        .md-content { padding: 20px; }
-        
-        .md-content h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+        .md-gallery-img:hover img {
+            transform: scale(1.05);
         }
         
-        .md-content p {
+        .md-gallery-img .img-error {
             color: var(--gray);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .md-gallery-caption {
+            padding: 15px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .md-gallery-caption h5 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .md-gallery-caption p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        /* Category Tabs */
+        .md-tab {
+            margin: 0 5px 10px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .md-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Lightbox Modal */
+        .md-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .md-lightbox.active {
+            display: flex;
+        }
+        
+        .md-lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .md-lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .md-lightbox-close:hover {
+            color: var(--accent);
+        }
+        
+        .md-lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 25px;
             font-size: 0.95rem;
         }
         
@@ -391,39 +480,6 @@
             height: 100%;
             object-fit: contain;
             background: #000;
-        }
-        
-        .video-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-        
-        .video-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-        
-        .video-placeholder p {
-            font-size: 0.95rem;
-            opacity: 0.95;
-            margin-bottom: 10px;
-        }
-        
-        .video-placeholder small {
-            font-size: 0.8rem;
-            opacity: 0.8;
         }
         
         .video-content { padding: 25px; }
@@ -964,6 +1020,7 @@
             .training-grid { grid-template-columns: 1fr; }
             .collaboration-grid { grid-template-columns: 1fr; }
             .video-grid { grid-template-columns: 1fr; }
+            .md-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
         }
         
         @media (max-width: 480px) {
@@ -975,6 +1032,12 @@
             .hero-buttons .btn {
                 width: 100%;
                 max-width: 280px;
+            }
+            .md-gallery-grid { grid-template-columns: 1fr; }
+            .md-tab {
+                display: block;
+                margin: 5px auto;
+                width: fit-content;
             }
         }
     </style>
@@ -1035,8 +1098,8 @@
                     <p>My research interests lie at the interface of molecular biology, chemistry, and computational modeling, where predictive simulations can accelerate and refine drug development strategies.</p>
                     <p>I strongly believe that the future of biomedical research lies in the integration of wet-lab experimentation and computational innovation. Beyond academic work, I am an avid reader and advocate for science education and public health awareness.</p>
                     <div style="margin-top: 25px;">
-                        <a href="images/CV_Mahedi_Hassan.pdf" download class="btn" style="margin-right: 10px;">
-                            <i class="fas fa-download"></i> Download CV
+                        <a href="images/CV_Mahedi_Hassan.pdf" download="Mahedi_Hassan_CV.pdf" class="btn" style="margin-right: 10px;">
+                            <i class="fas fa-file-pdf"></i> Download CV
                         </a>
                         <a href="#contact" class="btn btn-outline">Contact Me</a>
                     </div>
@@ -1104,85 +1167,192 @@
         </div>
     </section>
 
-    <!-- ===== MOLECULAR DYNAMICS SIMULATION ANALYSIS SECTION ===== -->
+    <!-- ===== MOLECULAR DYNAMICS SIMULATION ANALYSIS SECTION (15 IMAGES) ===== -->
     <section class="section" id="md-analysis">
         <div class="container">
             <div class="section-title">
                 <h2>Molecular Dynamics Simulation Analysis</h2>
+                <p style="color: var(--gray); max-width: 700px; margin: 15px auto 0;">
+                    Comprehensive analysis of protein-ligand dynamics using GROMACS/AMBER. 
+                    All plots generated from 100ns production MD simulations.
+                </p>
             </div>
-            <div class="md-grid">
+            
+            <!-- Category Tabs -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <button class="btn btn-outline md-tab active" data-target="all">All</button>
+                <button class="btn btn-outline md-tab" data-target="structural">Structural</button>
+                <button class="btn btn-outline md-tab" data-target="energy">Energy</button>
+                <button class="btn btn-outline md-tab" data-target="dynamics">Dynamics</button>
+            </div>
+            
+            <!-- Image Gallery Grid (15 Images) -->
+            <div class="md-gallery-grid" id="mdGallery">
                 
-                <!-- RMSD -->
-                <div class="md-card">
-                    <div class="md-image">
-                        <img src="images/RMSD.jpg" alt="RMSD Analysis">
+                <!-- ===== STRUCTURAL ANALYSIS (4 Images) ===== -->
+                <div class="md-gallery-item" data-category="structural">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_03_RMSD.png" alt="RMSD Plot">
                     </div>
-                    <div class="md-content">
-                        <h4><i class="fas fa-chart-line"></i> RMSD Analysis</h4>
-                        <p>Root Mean Square Deviation analysis to assess structural stability and conformational changes of protein-ligand complexes over simulation time.</p>
-                    </div>
-                </div>
-
-                <!-- RMSF -->
-                <div class="md-card">
-                    <div class="md-image">
-                        <img src="images/RMSF.jpg" alt="RMSF Analysis">
-                    </div>
-                    <div class="md-content">
-                        <h4><i class="fas fa-wave-square"></i> RMSF Analysis</h4>
-                        <p>Root Mean Square Fluctuation to identify flexible regions and residue-level dynamics in protein structures during MD simulations.</p>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-chart-line"></i> RMSD Analysis</h5>
+                        <p>Root Mean Square Deviation over 100ns simulation</p>
                     </div>
                 </div>
-
-                <!-- Rg -->
-                <div class="md-card">
-                    <div class="md-image">
-                        <img src="images/md-rg.jpg" alt="Radius of Gyration">
+                
+                <div class="md-gallery-item" data-category="structural">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_04_RMSF.png" alt="RMSF Plot">
                     </div>
-                    <div class="md-content">
-                        <h4><i class="fas fa-circle-notch"></i> Radius of Gyration (Rg)</h4>
-                        <p>Analyzing protein compactness and folding stability through radius of gyration measurements throughout the simulation trajectory.</p>
-                    </div>
-                </div>
-
-                <!-- SASA -->
-                <div class="md-card">
-                    <div class="md-image">
-                        <img src="images/md-sasa.jpg" alt="SASA Analysis">
-                    </div>
-                    <div class="md-content">
-                        <h4><i class="fas fa-expand-arrows-alt"></i> SASA Analysis</h4>
-                        <p>Solvent Accessible Surface Area calculation to understand protein-solvent interactions and binding site accessibility.</p>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-wave-square"></i> RMSF Analysis</h5>
+                        <p>Residue-level flexibility and fluctuation patterns</p>
                     </div>
                 </div>
-
-                <!-- Atom Contact -->
-                <div class="md-card">
-                    <div class="md-image">
-                        <img src="images/md-atom-contact.jpg" alt="Atom Contact Analysis">
+                
+                <div class="md-gallery-item" data-category="structural">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_07_Rg.png" alt="Radius of Gyration">
                     </div>
-                    <div class="md-content">
-                        <h4><i class="fas fa-network-wired"></i> Atom Contact Analysis</h4>
-                        <p>Detailed analysis of atomic interactions and contact patterns between protein and ligand molecules during simulation.</p>
-                    </div>
-                </div>
-
-                <!-- Distance Analysis -->
-                <div class="md-card">
-                    <div class="md-image">
-                        <img src="images/md-distance.jpg" alt="Distance Analysis">
-                    </div>
-                    <div class="md-content">
-                        <h4><i class="fas fa-ruler-horizontal"></i> Distance Analysis</h4>
-                        <p>Monitoring intermolecular distances and hydrogen bond patterns to evaluate binding stability and interaction dynamics.</p>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-circle-notch"></i> Radius of Gyration</h5>
+                        <p>Protein compactness and folding stability metric</p>
                     </div>
                 </div>
-
+                
+                <div class="md-gallery-item" data-category="structural">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_06_Combined_RMSD.png" alt="Combined RMSD">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-layer-group"></i> Combined RMSD</h5>
+                        <p>Comparative RMSD analysis of multiple trajectories</p>
+                    </div>
+                </div>
+                
+                <!-- ===== ENERGY ANALYSIS (5 Images) ===== -->
+                <div class="md-gallery-item" data-category="energy">
+                    <div class="md-gallery-img">
+                        <img src="images/Map_01_Energy_Landscape.png" alt="Energy Landscape">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-mountain"></i> Energy Landscape</h5>
+                        <p>Free energy surface mapping of conformational states</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="energy">
+                    <div class="md-gallery-img">
+                        <img src="images/Map_01_Energy_Landscape - Copy.png" alt="Energy Landscape Copy">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-mountain"></i> Energy Landscape (Alt)</h5>
+                        <p>Alternative view of free energy conformational mapping</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="energy">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_08_Energy_Map.png" alt="Energy Map">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-map"></i> Energy Map</h5>
+                        <p>Potential energy distribution across simulation frames</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="energy">
+                    <div class="md-gallery-img">
+                        <img src="images/Map_03_Structure_Matrix.png" alt="Structure Matrix">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-th"></i> Structure Matrix</h5>
+                        <p>Correlation matrix of structural parameters</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="energy">
+                    <div class="md-gallery-img">
+                        <img src="images/Map_03_Structure_Matrix - Copy.png" alt="Structure Matrix Copy">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-th"></i> Structure Matrix (Alt)</h5>
+                        <p>Alternative visualization of structural correlations</p>
+                    </div>
+                </div>
+                
+                <!-- ===== DYNAMICS ANALYSIS (6 Images) ===== -->
+                <div class="md-gallery-item" data-category="dynamics">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_01_Temperature.png" alt="Temperature Plot">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-thermometer-half"></i> Temperature Profile</h5>
+                        <p>System temperature stability during NPT equilibration</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="dynamics">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_02_Density.png" alt="Density Plot">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-tint"></i> Density Analysis</h5>
+                        <p>System density convergence during production run</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="dynamics">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_05_Hbonds.png" alt="Hydrogen Bonds">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-link"></i> Hydrogen Bonds</h5>
+                        <p>Protein-ligand H-bond occupancy over simulation time</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="dynamics">
+                    <div class="md-gallery-img">
+                        <img src="images/Map_02_Flexibility_Heatmap.png" alt="Flexibility Heatmap">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-fire-alt"></i> Flexibility Heatmap</h5>
+                        <p>Residue-wise flexibility visualization across trajectory</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="dynamics">
+                    <div class="md-gallery-img">
+                        <img src="images/Map_02_Flexibility_Heatmap - Copy.png" alt="Flexibility Heatmap Copy">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-fire-alt"></i> Flexibility Heatmap (Alt)</h5>
+                        <p>Alternative flexibility mapping visualization</p>
+                    </div>
+                </div>
+                
+                <div class="md-gallery-item" data-category="dynamics">
+                    <div class="md-gallery-img">
+                        <img src="images/Plot_09_Flexibility_Map.png" alt="Flexibility Map">
+                    </div>
+                    <div class="md-gallery-caption">
+                        <h5><i class="fas fa-project-diagram"></i> Flexibility Map</h5>
+                        <p>3D flexibility mapping on protein structure</p>
+                    </div>
+                </div>
+                
             </div>
+            
+            <!-- Gallery Controls -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-outline" id="showAllBtn">Show All Images</button>
+            </div>
+            
         </div>
     </section>
 
-    <!-- ===== MD SIMULATION VIDEOS SECTION (AUTOPLAY ENABLED) ===== -->
+    <!-- ===== MD SIMULATION VIDEOS SECTION (AUTOPLAY) ===== -->
     <section class="section" id="md-videos" style="background: white;">
         <div class="container">
             <div class="section-title">
@@ -1659,6 +1829,13 @@
         </div>
     </footer>
 
+    <!-- ===== LIGHTBOX MODAL ===== -->
+    <div class="md-lightbox" id="mdLightbox">
+        <span class="md-lightbox-close" id="lightboxClose">&times;</span>
+        <img src="" alt="MD Analysis" id="lightboxImg">
+        <div class="md-lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         // Mobile Navigation Toggle
@@ -1724,6 +1901,63 @@
             e.preventDefault();
             alert('Thank you! Message would send to biomahedihassan@gmail.com');
             this.reset();
+        });
+        
+        // MD Gallery Filter
+        const tabs = document.querySelectorAll('.md-tab');
+        const items = document.querySelectorAll('.md-gallery-item');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const target = this.dataset.target;
+                
+                items.forEach(item => {
+                    if (target === 'all' || item.dataset.category === target) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Show All Button
+        const showAllBtn = document.getElementById('showAllBtn');
+        if (showAllBtn) {
+            showAllBtn.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                document.querySelector('.md-tab[data-target="all"]').classList.add('active');
+                items.forEach(item => item.style.display = 'flex');
+            });
+        }
+        
+        // Lightbox Functionality
+        const lightbox = document.getElementById('mdLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
+        
+        document.querySelectorAll('.md-gallery-img').forEach(imgContainer => {
+            imgContainer.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const caption = this.parentElement.querySelector('.md-gallery-caption h5').textContent;
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = caption;
+                lightbox.classList.add('active');
+            });
+        });
+        
+        lightboxClose.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
+        
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
         });
         
         // Init
