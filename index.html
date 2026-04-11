@@ -248,7 +248,7 @@
             border: 4px solid white;
         }
         
-        /* ===== COLLABORATION SECTION (Moved Up) ===== */
+        /* ===== COLLABORATION SECTION ===== */
         .collaboration-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -358,7 +358,7 @@
             line-height: 1.7;
         }
         
-        /* ===== MD VIDEO SECTION ===== */
+        /* ===== VIDEO SECTION SHARED STYLES ===== */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -425,6 +425,7 @@
             gap: 15px;
             font-size: 0.85rem;
             color: var(--gray);
+            flex-wrap: wrap;
         }
         
         .video-meta span {
@@ -1077,6 +1078,8 @@
                     <li><a href="#collaboration">Collaboration</a></li>
                     <!-- Research moved down -->
                     <li><a href="#research">Research</a></li>
+                    <!-- NEW: Docking Project Link -->
+                    <li><a href="#docking-automation">Docking Project</a></li>
                     <!-- MD Videos moved up after Research -->
                     <li><a href="#md-videos">MD Videos</a></li>
                     <li><a href="#md-analysis">MD Analysis</a></li>
@@ -1221,8 +1224,54 @@
         </div>
     </section>
 
-    <!-- ===== MD SIMULATION VIDEOS SECTION (Moved After Research Focus) ===== -->
-    <section class="section" id="md-videos" style="background: white;">
+    <!-- ===== NEW: DOCKING AUTOMATION PROJECT SECTION (Placed After Research, Before MD Videos) ===== -->
+    <section class="section" id="docking-automation" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Docking Automation Project</h2>
+            </div>
+            <div class="video-grid">
+                
+                <!-- Automation Project Video -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <video 
+                            src="videos/Docking_Automation.mp4" 
+                            controls 
+                            autoplay 
+                            muted 
+                            playsinline 
+                            loop 
+                            poster="images/docking-poster.jpg" 
+                            preload="metadata">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-content">
+                        <h4><i class="fas fa-robot"></i> Automated Workflow</h4>
+                        <p>Here is my small project. I have automated Molecular Docking, Virtual Screening, and ADMET analysis to streamline the drug discovery pipeline.</p>
+                        <p style="margin-bottom: 20px;">I am also working on making MD_Simulation automated and developing several other AI and agent-based tools.</p>
+                        
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="https://huggingface.co/spaces/hmalik342/insilico-docking-hub" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Visit Web App
+                            </a>
+                        </div>
+
+                        <div class="video-meta" style="margin-top: 20px; justify-content: center;">
+                            <span><i class="fas fa-code"></i> Python Automation</span>
+                            <span><i class="fas fa-flask"></i> ADMET</span>
+                            <span><i class="fas fa-project-diagram"></i> Virtual Screening</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MD SIMULATION VIDEOS SECTION (Moved After Docking Project) ===== -->
+    <section class="section" id="md-videos" style="background: var(--light);">
         <div class="container">
             <div class="section-title">
                 <h2>MD Simulation Videos</h2>
