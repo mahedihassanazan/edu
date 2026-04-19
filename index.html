@@ -434,6 +434,56 @@
             gap: 5px;
         }
 
+        /* ===== NEW: CRISPR PROJECT STYLES ===== */
+        .project-showcase {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .crisper-plot {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-gray);
+            background: var(--light);
+            transition: var(--transition);
+        }
+        
+        /* Highlight Effect on Hover */
+        .crisper-plot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: var(--accent);
+        }
+
+        .crisper-plot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .project-desc {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            padding: 0 10px;
+        }
+
         /* ===== MD SIMULATION ANALYSIS SECTION (GALLERY) ===== */
         .md-gallery-grid {
             display: grid;
@@ -1044,6 +1094,7 @@
             .collaboration-grid { grid-template-columns: 1fr; }
             .video-grid { grid-template-columns: 1fr; }
             .md-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+            .project-grid { grid-template-columns: 1fr; }
         }
         
         @media (max-width: 480px) {
@@ -1078,10 +1129,12 @@
                     <li><a href="#collaboration">Collaboration</a></li>
                     <!-- Research moved down -->
                     <li><a href="#research">Research</a></li>
-                    <!-- NEW: Docking Project Link -->
+                    <!-- Docking Project Link -->
                     <li><a href="#docking-automation">Docking Project</a></li>
-                    <!-- NEW: Carbon Deposition Link -->
+                    <!-- Carbon Deposition Link -->
                     <li><a href="#carbon-deposition">Carbon Deposition</a></li>
+                    <!-- NEW: CRISPR Project Link -->
+                    <li><a href="#crisper-project">CRISPR Project</a></li>
                     <!-- MD Videos moved up after Research -->
                     <li><a href="#md-videos">MD Videos</a></li>
                     <li><a href="#md-analysis">MD Analysis</a></li>
@@ -1141,7 +1194,7 @@
         </div>
     </section>
 
-    <!-- ===== INTERNATIONAL COLLABORATION SECTION (Moved After About) ===== -->
+    <!-- ===== INTERNATIONAL COLLABORATION SECTION ===== -->
     <section class="section" id="collaboration" style="background: white;">
         <div class="container">
             <div class="section-title">
@@ -1181,7 +1234,7 @@
         </div>
     </section>
 
-    <!-- ===== RESEARCH FOCUS SECTION (Moved After Collaboration) ===== -->
+    <!-- ===== RESEARCH FOCUS SECTION ===== -->
     <section class="section" id="research">
         <div class="container">
             <div class="section-title">
@@ -1226,7 +1279,7 @@
         </div>
     </section>
 
-    <!-- ===== NEW: DOCKING AUTOMATION PROJECT SECTION (Placed After Research, Before Carbon Deposition) ===== -->
+    <!-- ===== DOCKING AUTOMATION PROJECT SECTION ===== -->
     <section class="section" id="docking-automation" style="background: white;">
         <div class="container">
             <div class="section-title">
@@ -1272,7 +1325,7 @@
         </div>
     </section>
 
-    <!-- ===== NEW: CARBON DEPOSITION PROJECT SECTION (Added Right Below Docking) ===== -->
+    <!-- ===== CARBON DEPOSITION PROJECT SECTION ===== -->
     <section class="section" id="carbon-deposition" style="background: var(--light);">
         <div class="container">
             <div class="section-title">
@@ -1317,7 +1370,52 @@
         </div>
     </section>
 
-    <!-- ===== MD SIMULATION VIDEOS SECTION (Moved After Carbon Deposition) ===== -->
+    <!-- ===== NEW: CRISPR CAS9 PROJECT SECTION (Guided RNA) ===== -->
+    <section class="section" id="crisper-project" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>CRISPR Cas9 Project (Guided RNA)</h2>
+            </div>
+            
+            <div class="project-showcase">
+                <p class="project-desc">
+                    Detailed analysis of Guided RNA (gRNA) efficiency and target specificity for the CRISPR-Cas9 system. The visualizations below highlight the computational modeling results, including off-target predictions and binding energy profiles.
+                </p>
+
+                <div class="project-grid">
+                    <!-- Plot 1 -->
+                    <div class="crisper-plot">
+                        <!-- Note: Ensure files exist at edu/crisper_project/plot_01.png etc -->
+                        <img src="edu/crisper_project/plot_01.png" alt="gRNA Efficiency Plot">
+                    </div>
+                    
+                    <!-- Plot 2 -->
+                    <div class="crisper-plot">
+                        <img src="edu/crisper_project/plot_02.png" alt="Target Specificity Analysis">
+                    </div>
+                    
+                    <!-- Plot 3 -->
+                    <div class="crisper-plot">
+                        <img src="edu/crisper_project/plot_03.png" alt="Off-target Prediction">
+                    </div>
+
+                    <!-- Plot 4 -->
+                    <div class="crisper-plot">
+                        <img src="edu/crisper_project/plot_04.png" alt="Binding Energy Profile">
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://github.com/mahedihassanazan/edu/tree/main/crisper_project" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> View Repository
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ===== MD SIMULATION VIDEOS SECTION ===== -->
     <section class="section" id="md-videos" style="background: var(--light);">
         <div class="container">
             <div class="section-title">
