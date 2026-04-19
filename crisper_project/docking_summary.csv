@@ -1,0 +1,4 @@
+Rank,gRNA ID,gRNA Sequence,GC Content (%),Best Affinity (kcal/mol),Binding Category,All Poses (kcal/mol),Status,Recommendation
+1,gRNA_1,CCATTGGGACCGGAGAAACC,60.0,0,Weak,[],failed,[NO] Not Recommended
+2,gRNA_2,CGGAGCCGCAGTGAGCACCA,70.0,0,Weak,[],failed,[NO] Not Recommended
+3,gRNA_3,GCGAGCACCCAAGTGTGCAC,65.0,0,Weak,[],failed,[NO] Not Recommended
