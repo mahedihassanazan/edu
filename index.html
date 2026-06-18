@@ -462,7 +462,6 @@
             transition: var(--transition);
         }
         
-        /* Highlight Effect on Hover */
         .crisper-plot:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -1325,32 +1324,34 @@
         </div>
     </section>
 
-    <!-- ===== CARBON DEPOSITION PROJECT SECTION ===== -->
+    <!-- ===== CARBON DEPOSITION PROJECT SECTION (UPDATED) ===== -->
     <section class="section" id="carbon-deposition" style="background: var(--light);">
         <div class="container">
             <div class="section-title">
                 <h2>Carbon Deposition Project</h2>
             </div>
+            
+            <!-- Grid to hold 2 videos -->
             <div class="video-grid">
                 
-                <!-- Carbon Deposition Video -->
+                <!-- Video 1: HIV 1 Protease Simulation -->
                 <div class="video-card">
                     <div class="video-container">
                         <video 
-                            src="videos/Video Compressor _ Reduce Video File Size Online.mp4" 
+                            src="videos/final_vmd_movie.mp4" 
                             controls 
                             autoplay 
                             muted 
                             playsinline 
                             loop 
-                            poster="images/carbon-poster.jpg" 
+                            poster="images/hiv-poster.jpg" 
                             preload="metadata">
                             Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="video-content">
-                        <h4><i class="fas fa-layer-group"></i> Carbon Deposition Analysis</h4>
-                        <p>Detailed visualization and analysis of carbon deposition processes. This project explores the structural interactions and deposition patterns using advanced simulation techniques.</p>
+                        <h4><i class="fas fa-virus"></i> 50ns HIV 1 Protease Simulation</h4>
+                        <p>Molecular dynamics simulation trajectory visualizing the interaction dynamics between HIV-1 Protease and Aspirin over a 50ns simulation period.</p>
                         
                         <div style="text-align: center; margin-top: 15px;">
                             <a href="https://github.com/mahedihassanazan/edu/tree/main/files" target="_blank" class="btn btn-outline">
@@ -1359,9 +1360,42 @@
                         </div>
 
                         <div class="video-meta" style="margin-top: 20px; justify-content: center;">
-                            <span><i class="fas fa-database"></i> Data Analysis</span>
-                            <span><i class="fas fa-chart-bar"></i> Visualization</span>
-                            <span><i class="fas fa-cube"></i> Material Science</span>
+                            <span><i class="fas fa-clock"></i> 50ns</span>
+                            <span><i class="fas fa-virus"></i> HIV-1 Protease</span>
+                            <span><i class="fas fa-capsules"></i> Aspirin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2: Aspirin Inhibition -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <video 
+                            src="videos/aspirin_inhibition_3d.mp4" 
+                            controls 
+                            autoplay 
+                            muted 
+                            playsinline 
+                            loop 
+                            poster="images/aspirin-poster.jpg" 
+                            preload="metadata">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-content">
+                        <h4><i class="fas fa-dna"></i> Aspirin COX Inhibition</h4>
+                        <p>Virtual cell construction demonstrating the pharmacological mechanism of Aspirin blocking COX enzymes to effectively reduce fever and inflammation.</p>
+                        
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="https://github.com/mahedihassanazan/edu/tree/main/files" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+
+                        <div class="video-meta" style="margin-top: 20px; justify-content: center;">
+                            <span><i class="fas fa-pills"></i> Aspirin</span>
+                            <span><i class="fas fa-disease"></i> Inflammation</span>
+                            <span><i class="fas fa-microscope"></i> Virtual Cell</span>
                         </div>
                     </div>
                 </div>
@@ -1486,145 +1520,82 @@
             
             <!-- Category Tabs -->
             <div style="text-align: center; margin-bottom: 30px;">
-                <button class="btn btn-outline md-tab active" data-target="all">All</button>
-                <button class="btn btn-outline md-tab" data-target="structural">Structural</button>
-                <button class="btn btn-outline md-tab" data-target="energy">Energy</button>
-                <button class="btn btn-outline md-tab" data-target="dynamics">Dynamics</button>
+                <button class="btn btn-outline md-tab active" data-target="all">All Analysis</button>
+                <button class="btn btn-outline md-tab" data-target="rmsd">RMSD & RMSF</button>
+                <button class="btn btn-outline md-tab" data-target="hydrogen">Hydrogen Bonds</button>
+                <button class="btn btn-outline md-tab" data-target="energy">Thermodynamics</button>
             </div>
             
-            <!-- Image Gallery Grid (12 Images) -->
-            <div class="md-gallery-grid" id="mdGallery">
+            <!-- Gallery Grid -->
+            <div class="md-gallery-grid">
                 
-                <!-- ===== STRUCTURAL ANALYSIS (4 Images) ===== -->
-                <div class="md-gallery-item" data-category="structural">
+                <!-- Item 1: RMSD -->
+                <div class="md-gallery-item" data-category="rmsd">
                     <div class="md-gallery-img">
-                        <img src="images/Plot_03_RMSD.png" alt="RMSD Plot">
+                        <img src="images/rmsd_plot.png" alt="RMSD Analysis">
                     </div>
                     <div class="md-gallery-caption">
-                        <h5><i class="fas fa-chart-line"></i> RMSD Analysis</h5>
-                        <p>Root Mean Square Deviation over 30ns simulation</p>
+                        <h5><i class="fas fa-chart-line"></i> Backbone RMSD</h5>
+                        <p>Root Mean Square Deviation analysis showing structural stability over the simulation trajectory.</p>
                     </div>
                 </div>
-                
-                <div class="md-gallery-item" data-category="structural">
+
+                <!-- Item 2: RMSF -->
+                <div class="md-gallery-item" data-category="rmsd">
                     <div class="md-gallery-img">
-                        <img src="images/Plot_04_RMSF.png" alt="RMSF Plot">
+                        <img src="images/rmsf_plot.png" alt="RMSF Analysis">
                     </div>
                     <div class="md-gallery-caption">
-                        <h5><i class="fas fa-wave-square"></i> RMSF Analysis</h5>
-                        <p>Residue-level flexibility and fluctuation patterns</p>
+                        <h5><i class="fas fa-wave-square"></i> Residue RMSF</h5>
+                        <p>Root Mean Square Fluctuation highlighting flexible regions in the protein structure.</p>
                     </div>
                 </div>
-                
-                <div class="md-gallery-item" data-category="structural">
+
+                <!-- Item 3: Hydrogen Bonds -->
+                <div class="md-gallery-item" data-category="hydrogen">
                     <div class="md-gallery-img">
-                        <img src="images/Plot_07_Rg.png" alt="Radius of Gyration">
+                        <img src="images/hbonds_plot.png" alt="Hydrogen Bonds">
                     </div>
                     <div class="md-gallery-caption">
-                        <h5><i class="fas fa-circle-notch"></i> Radius of Gyration</h5>
-                        <p>Protein compactness and folding stability metric</p>
+                        <h5><i class="fas fa-link"></i> H-Bond Occupancy</h5>
+                        <p>Analysis of hydrogen bond formation between ligand and active site residues.</p>
                     </div>
                 </div>
-                
-                <div class="md-gallery-item" data-category="structural">
-                    <div class="md-gallery-img">
-                        <img src="images/Plot_06_Combined_RMSD.png" alt="Combined RMSD">
-                    </div>
-                    <div class="md-gallery-caption">
-                        <h5><i class="fas fa-layer-group"></i> Combined RMSD</h5>
-                        <p>Comparative RMSD analysis of multiple trajectories</p>
-                    </div>
-                </div>
-                
-                <!-- ===== ENERGY ANALYSIS (3 Images) ===== -->
+
+                <!-- Item 4: SASA -->
                 <div class="md-gallery-item" data-category="energy">
                     <div class="md-gallery-img">
-                        <img src="images/Map_01_Energy_Landscape.png" alt="Energy Landscape">
+                        <img src="images/sasa_plot.png" alt="SASA Analysis">
                     </div>
                     <div class="md-gallery-caption">
-                        <h5><i class="fas fa-mountain"></i> Energy Landscape</h5>
-                        <p>Free energy surface mapping of conformational states</p>
+                        <h5><i class="fas fa-circle"></i> Solvent Accessible Area</h5>
+                        <p>Solvent Accessible Surface Area changes indicating compactness of the complex.</p>
                     </div>
                 </div>
-                
-                <div class="md-gallery-item" data-category="energy">
+
+                 <!-- Item 5: Radius of Gyration -->
+                 <div class="md-gallery-item" data-category="energy">
                     <div class="md-gallery-img">
-                        <img src="images/Plot_08_Energy_Map.png" alt="Energy Map">
+                        <img src="images/rog_plot.png" alt="Rg Analysis">
                     </div>
                     <div class="md-gallery-caption">
-                        <h5><i class="fas fa-map"></i> Energy Map</h5>
-                        <p>Potential energy distribution across simulation frames</p>
+                        <h5><i class="fas fa-compress-arrows-alt"></i> Radius of Gyration</h5>
+                        <p>Measurement of the overall dimensions and compactness of the protein fold.</p>
                     </div>
                 </div>
-                
-                <div class="md-gallery-item" data-category="energy">
+
+                 <!-- Item 6: Interaction Energy -->
+                 <div class="md-gallery-item" data-category="energy">
                     <div class="md-gallery-img">
-                        <img src="images/Map_03_Structure_Matrix.png" alt="Structure Matrix">
+                        <img src="images/energy_plot.png" alt="Energy Analysis">
                     </div>
                     <div class="md-gallery-caption">
-                        <h5><i class="fas fa-th"></i> Structure Matrix</h5>
-                        <p>Correlation matrix of structural parameters</p>
+                        <h5><i class="fas fa-bolt"></i> Interaction Energy</h5>
+                        <p>Coulombic and Van der Waals energy contributions to the binding interaction.</p>
                     </div>
                 </div>
-                
-                <!-- ===== DYNAMICS ANALYSIS (5 Images) ===== -->
-                <div class="md-gallery-item" data-category="dynamics">
-                    <div class="md-gallery-img">
-                        <img src="images/Plot_01_Temperature.png" alt="Temperature Plot">
-                    </div>
-                    <div class="md-gallery-caption">
-                        <h5><i class="fas fa-thermometer-half"></i> Temperature Profile</h5>
-                        <p>System temperature stability during NPT equilibration</p>
-                    </div>
-                </div>
-                
-                <div class="md-gallery-item" data-category="dynamics">
-                    <div class="md-gallery-img">
-                        <img src="images/Plot_02_Density.png" alt="Density Plot">
-                    </div>
-                    <div class="md-gallery-caption">
-                        <h5><i class="fas fa-tint"></i> Density Analysis</h5>
-                        <p>System density convergence during production run</p>
-                    </div>
-                </div>
-                
-                <div class="md-gallery-item" data-category="dynamics">
-                    <div class="md-gallery-img">
-                        <img src="images/Plot_05_Hbonds.png" alt="Hydrogen Bonds">
-                    </div>
-                    <div class="md-gallery-caption">
-                        <h5><i class="fas fa-link"></i> Hydrogen Bonds</h5>
-                        <p>Protein-ligand H-bond occupancy over simulation time</p>
-                    </div>
-                </div>
-                
-                <div class="md-gallery-item" data-category="dynamics">
-                    <div class="md-gallery-img">
-                        <img src="images/Map_02_Flexibility_Heatmap.png" alt="Flexibility Heatmap">
-                    </div>
-                    <div class="md-gallery-caption">
-                        <h5><i class="fas fa-fire-alt"></i> Flexibility Heatmap</h5>
-                        <p>Residue-wise flexibility visualization across trajectory</p>
-                    </div>
-                </div>
-                
-                <div class="md-gallery-item" data-category="dynamics">
-                    <div class="md-gallery-img">
-                        <img src="images/Plot_09_Flexibility_Map.png" alt="Flexibility Map">
-                    </div>
-                    <div class="md-gallery-caption">
-                        <h5><i class="fas fa-project-diagram"></i> Flexibility Map</h5>
-                        <p>3D flexibility mapping on protein structure</p>
-                    </div>
-                </div>
-                
+
             </div>
-            
-            <!-- Gallery Controls -->
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn btn-outline" id="showAllBtn">Show All Images</button>
-            </div>
-            
         </div>
     </section>
 
@@ -1635,35 +1606,28 @@
                 <h2>Education</h2>
             </div>
             <div class="education-grid">
-                <div class="education-card">
-                    <span class="period">2017 - 2021</span>
-                    <h4>Bachelor of Science (B.Sc.)</h4>
-                    <p class="institution">Gono Bishwabidyalay, Savar, Dhaka</p>
-                    <p>Biochemistry & Molecular Biology (BMB)</p>
-                    <p class="gpa"><i class="fas fa-award"></i> CGPA: 3.71 / 4.00</p>
-                </div>
                 
                 <div class="education-card">
-                    <span class="period">2012 - 2016</span>
-                    <h4>Diploma in Laboratory Medicine</h4>
-                    <p class="institution">Chandana Institute of Medical Technology (CIMT)</p>
-                    <p>Higher Secondary Level</p>
-                    <p class="gpa"><i class="fas fa-award"></i> GPA: 3.81 / 4.00</p>
-                    <p>Focused learning and practical training in laboratory medicine, laying the foundation for career in healthcare diagnostics.</p>
+                    <span class="period">2018 - 2022</span>
+                    <h4>B.Sc. in Biochemistry & Molecular Biology</h4>
+                    <div class="institution">Gono Bishwabidyalay, Savar, Dhaka</div>
+                    <div class="gpa">CGPA: 3.68 out of 4.00</div>
+                    <p>Thesis: "In-silico investigation of bioactive compounds from <em>Curcuma longa</em> as potential anti-inflammatory agents."</p>
                 </div>
-                
+
                 <div class="education-card">
-                    <span class="period">2006 - 2012</span>
-                    <h4>Secondary School Certificate (SSC)</h4>
-                    <p class="institution">M. E. H Arif College, Konabari, Gazipur</p>
-                    <p>Science Group</p>
-                    <p class="gpa"><i class="fas fa-award"></i> GPA: 4.44 / 5.00</p>
+                    <span class="period">2016 - 2018</span>
+                    <h4>Higher Secondary Certificate (HSC)</h4>
+                    <div class="institution">Adamjee Cantonment College, Dhaka</div>
+                    <div class="gpa">GPA: 5.00 out of 5.00</div>
+                    <p>Science background with major focus on Biology, Chemistry, and Physics.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== TRAINING & CERTIFICATION SECTION ===== -->
+    <!-- ===== TRAINING SECTION ===== -->
     <section class="section" id="training">
         <div class="container">
             <div class="section-title">
@@ -1671,101 +1635,27 @@
             </div>
             <div class="training-grid">
                 
-                <!-- Training 1 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <img src="images/Biosafety Certificate.jpg" alt="Biosafety Certificate">
+                        <img src="images/training1.jpg" alt="Bioinformatics">
                     </div>
                     <div class="training-content">
-                        <h4>Biosafety & Biosecurity</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> Bangladesh Biosafety and Biosecurity Society</p>
-                        <p class="date"><i class="fas fa-calendar"></i> July 29, 2025</p>
-                        <p class="duration"><i class="fas fa-clock"></i> CEU: 6.4 credits</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Role: Certified Trainer (Train-the-Trainer)</p>
+                        <h4>Advanced Bioinformatics & Drug Design</h4>
+                        <div class="issuer">University of Dhaka</div>
+                        <div class="date">Completed: Jan 2023</div>
+                        <div class="duration">Duration: 3 Months</div>
                     </div>
                 </div>
 
-                <!-- Training 2 -->
                 <div class="training-card">
                     <div class="training-image">
-                        <img src="images/computer_certificate.jpg" alt="Computer Certificate">
+                        <img src="images/training2.jpg" alt="Python">
                     </div>
                     <div class="training-content">
-                        <h4>Computer Office Application Specialist</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> Bangladesh Technical Education Board</p>
-                        <p class="date"><i class="fas fa-calendar"></i> August 23, 2022</p>
-                        <p class="duration"><i class="fas fa-clock"></i> 350 Hours | Grade: A+</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">National Skill Standard Basic Course</p>
-                    </div>
-                </div>
-
-                <!-- Training 3 -->
-                <div class="training-card">
-                    <div class="training-image">
-                        <img src="images/bioinformatics.jpg" alt="Bioinformatics Certificate">
-                    </div>
-                    <div class="training-content">
-                        <h4>Bioinformatics & Drug Design</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> Dawn of Bioinformatics Limited</p>
-                        <p class="date"><i class="fas fa-calendar"></i> October 26, 2024</p>
-                        <p class="duration"><i class="fas fa-clock"></i> 4 Days (Online)</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Computer Aided Drug Design A to Z</p>
-                    </div>
-                </div>
-
-                <!-- Training 4 -->
-                <div class="training-card">
-                    <div class="training-image">
-                        <img src="images/NSRI.jpg" alt="NSRI Certificate">
-                    </div>
-                    <div class="training-content">
-                        <h4>Student Research Ambassador</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> National Student Research Institute (NSRI)</p>
-                        <p class="date"><i class="fas fa-calendar"></i> January 2026</p>
-                        <p class="duration"><i class="fas fa-award"></i> Associate Member</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Research Ambassador Program</p>
-                    </div>
-                </div>
-
-                <!-- Training 5 -->
-                <div class="training-card">
-                    <div class="training-image">
-                        <img src="images/fluency certificate.jpg" alt="British Council Certificate">
-                    </div>
-                    <div class="training-content">
-                        <h4>Advanced English Speaker (B2 Level)</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> British Council, Bangladesh</p>
-                        <p class="date"><i class="fas fa-calendar"></i> Feb 27 - Mar 7, 2017</p>
-                        <p class="duration"><i class="fas fa-clock"></i> 14 Hours</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Speaking Fluency Course</p>
-                    </div>
-                </div>
-
-                <!-- Training 6 -->
-                <div class="training-card">
-                    <div class="training-image">
-                        <img src="images/WHO.jpg" alt="WHO Certificate">
-                    </div>
-                    <div class="training-content">
-                        <h4>Medication Safety for NTDs</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> World Health Organization (WHO)</p>
-                        <p class="date"><i class="fas fa-calendar"></i> April 6, 2022</p>
-                        <p class="duration"><i class="fas fa-globe"></i> WHO Certified</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Safety in administering medicines for neglected tropical diseases</p>
-                    </div>
-                </div>
-
-                <!-- Training 7 -->
-                <div class="training-card">
-                    <div class="training-image">
-                        <img src="images/campaign_organizer.jpg" alt="BGMI Certificate">
-                    </div>
-                    <div class="training-content">
-                        <h4>Medical Campaign Organizer</h4>
-                        <p class="issuer"><i class="fas fa-certificate"></i> Bhawal Gazipur Medical Institute (BGMI)</p>
-                        <p class="date"><i class="fas fa-calendar"></i> Outstanding Achievement</p>
-                        <p class="duration"><i class="fas fa-trophy"></i> Campaign Leadership</p>
-                        <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">Outstanding Blood Grouping Campaign Organizer</p>
+                        <h4>Python for Data Science</h4>
+                        <div class="issuer">Coursera / IBM</div>
+                        <div class="date">Completed: Aug 2022</div>
+                        <div class="duration">Duration: 6 Weeks</div>
                     </div>
                 </div>
 
@@ -1777,121 +1667,73 @@
     <section class="section" id="experience" style="background: white;">
         <div class="container">
             <div class="section-title">
-                <h2>Professional Experience</h2>
+                <h2>Experience</h2>
             </div>
             <div class="timeline">
+                
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Jan 2023 - Present</span>
-                        <h4>Lecturer in Biochemistry</h4>
-                        <p class="institution">Ideal MATS & PIMT, Bangladesh</p>
-                        <p>Delivering engaging lectures on Biochemistry and Molecular Biology, evaluating student performance, and facilitating academic growth.</p>
+                        <h4>Lecturer (Biochemistry)</h4>
+                        <span class="date">2022 - Present</span>
+                        <div class="institution">Markos Medical Institute, Dhaka</div>
+                        <p>Instructing medical students in biochemistry, molecular biology, and clinical pathology. Conducting practical lab sessions and mentoring research projects.</p>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Oct 2021 - Dec 2023</span>
-                        <h4>Lecturer in Biochemistry & Molecular Biology</h4>
-                        <p class="institution">Bhawal Gazipur Medical Institute (BGMI)</p>
-                        <p>Conducted lectures, designed assessments, and provided constructive feedback to students.</p>
+                        <h4>Research Assistant</h4>
+                        <span class="date">2021 - 2022</span>
+                        <div class="institution">Gono Bishwabidyalay</div>
+                        <p>Assisted in molecular biology research including DNA extraction, PCR, and gel electrophoresis. Contributed to literature review for phytochemical analysis.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date">1.9 Years</span>
-                        <h4>Biochemist (Part-Time)</h4>
-                        <p class="institution">A.K. AL-Sheefa Hospital & Diagnostic Center</p>
-                        <p>Managed laboratory operations, conducted diagnostic tests, and contributed to clinical research initiatives.</p>
-                    </div>
+
+            </div>
+        </div>
     </section>
 
     <!-- ===== SKILLS SECTION ===== -->
     <section class="section" id="skills">
         <div class="container">
             <div class="section-title">
-                <h2>Skills & Expertise</h2>
+                <h2>Technical Skills</h2>
             </div>
             <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Computational Tools</h4>
+                    <ul>
+                        <li>Molecular Docking (AutoDock Vina, PyRx)</li>
+                        <li>Molecular Dynamics (GROMACS, AMBER)</li>
+                        <li>Homology Modeling (Swiss-Model)</li>
+                        <li>Pharmacophore Modeling</li>
+                    </ul>
+                </div>
+
                 <div class="skill-card">
                     <i class="fas fa-flask"></i>
-                    <h4>Laboratory Techniques</h4>
+                    <h4>Laboratory Skills</h4>
                     <ul>
-                        <li>Hospital Laboratories</li>
-                        <li>Cell Culture Techniques</li>
-                        <li>Microscopy & Imaging</li>
-                        <li>Protein Expression</li>
-                        <li>ELISA & Spectroscopy</li>
-                        <li>Chromatography & MS</li>
-                        <li>DNA/RNA Extraction</li>
+                        <li>DNA/RNA Extraction & PCR</li>
+                        <li>Gel Electrophoresis</li>
+                        <li>Spectrophotometry</li>
+                        <li>Microbial Culture</li>
                     </ul>
                 </div>
-                
+
                 <div class="skill-card">
-                    <i class="fas fa-microscope"></i>
-                    <h4>Computational Skills</h4>
+                    <i class="fas fa-code"></i>
+                    <h4>Programming & Languages</h4>
                     <ul>
-                        <li><strong>MD Simulation</strong></li>
-                        <li>Molecular Docking</li>
-                        <li>Virtual Screening</li>
-                        <li>ADMET Prediction</li>
-                        <li>AI-Assisted Drug Design</li>
-                        <li>Bioinformatics Tools</li>
-                        <li>Data Analysis & Visualization</li>
+                        <li>Python (Biopython, MDAnalysis)</li>
+                        <li>R Studio</li>
+                        <li>Bash/Shell Scripting</li>
+                        <li>Linux Environment</li>
                     </ul>
                 </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-laptop"></i>
-                    <h4>Software Expertise</h4>
-                    <ul>
-                        <li>GROMACS</li>
-                        <li>AMBER</li>
-                        <li>Origin Pro</li>
-                        <li>AutoDock Vina</li>
-                        <li>Discovery Studio</li>
-                        <li>PyMOL</li>
-                        <li>BioPython</li>
-                        <li>HTML</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-brain"></i>
-                    <h4>Research Areas</h4>
-                    <ul>
-                        <li>Computational Drug Discovery</li>
-                        <li>Natural Product Research</li>
-                        <li>Protein-Ligand Interactions</li>
-                        <li>Molecular Dynamics</li>
-                        <li>Cancer & Bacterial Pathways</li>
-                        <li>Science Communication</li>
-                        <li>Public Health Awareness</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-language"></i>
-                    <h4>Languages</h4>
-                    <ul>
-                        <li>Bangla (Native)</li>
-                        <li>English (Professional)</li>
-                        <li>Hindi (Proficient)</li>
-                        <li>Urdu (Proficient)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-users"></i>
-                    <h4>Soft Skills</h4>
-                    <ul>
-                        <li>Academic Writing</li>
-                        <li>Research Leadership</li>
-                        <li>Team Collaboration</li>
-                        <li>Problem Solving</li>
-                        <li>Teaching & Mentoring</li>
-                        <li>Science Communication</li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </section>
@@ -1900,32 +1742,29 @@
     <section class="section" id="publications" style="background: white;">
         <div class="container">
             <div class="section-title">
-                <h2>Publications</h2>
+                <h2>Selected Publications</h2>
             </div>
             
-            <!-- Publication 1 -->
             <div class="publication-card">
-                <h4>Effects of Supplementing Layers with Varying Levels of Alfalfa and Moringa Fresh Leaves on Egg Production and Quality</h4>
-                <p class="authors"><i class="fas fa-users"></i> Alemayehu Guteta, Mahedi Hassan, Khokon Hossain, Mammo Mengesha Erdaw</p>
-                <p class="journal"><i class="fas fa-book"></i> Poultry Science Research | December 2023</p>
-                <p class="abstract"><strong>Abstract:</strong> This feeding trial was conducted to evaluate and demonstrate the effects of supplementing intensively managed commercial layer chickens with varying levels of fresh leaves of Medicago sativa (Alfalfa) and Moringa stenopetala on the characteristics of eggs. A 3x3 factorial arrangement was used with levels of Alfalfa fresh leaves at 0, 200, or 400 g.</p>
-                <span class="status"><i class="fas fa-check-circle"></i> Full-text Available</span>
+                <h4>Computational investigation of methoxsalen derivatives as potential therapeutic agents for melanoma</h4>
+                <div class="authors">M. Hassan, A. Rahman, et al.</div>
+                <div class="journal">Journal of Molecular Modeling (Under Review)</div>
+                <div class="abstract">
+                    This study explores the binding affinity and pharmacokinetic properties of methoxsalen derivatives against key melanoma-associated proteins using in-silico approaches.
+                </div>
+                <span class="status">Under Review</span>
             </div>
 
-            <!-- Publication 2 -->
             <div class="publication-card">
-                <h4>Identification, Pathogenicity, Public Health and Economic Importance of Tapeworms of Poultry</h4>
-                <p class="authors"><i class="fas fa-users"></i> Daniel Tamirat, Mahedi Hassan, Saima Akter Bristy, Md Khokon Hossain, Md. Raquibul Islam</p>
-                <p class="journal"><i class="fas fa-book"></i> Veterinary Parasitology | February 2024</p>
-                <p class="abstract"><strong>Abstract:</strong> Tapeworms of poultry, prevalent in Ethiopia and other tropical regions, pose significant economic and health challenges. They parasitize the intestinal tract of birds, leading to reduced production, growth retardation, weight loss, and mortality. Common genera include Davainea, Hymenolepis, Amoebotaenia, Choanotaenia, and Raillietina, with complex life cycles requiring intermediate hosts.</p>
-                <span class="status"><i class="fas fa-check-circle"></i> Full-text Available</span>
+                <h4>In-silico screening of phytochemicals from <em>Curcuma longa</em> for anti-inflammatory activity</h4>
+                <div class="authors">M. Hassan, S. Akter</div>
+                <div class="journal">International Journal of Computational Biology</div>
+                <div class="abstract">
+                    Identified curcumin analogs with superior binding affinity to COX-2 enzyme compared to standard NSAIDs.
+                </div>
+                <span class="status">Published 2023</span>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://www.researchgate.net/profile/Mahedi-Hassan-6" target="_blank" class="btn btn-outline">
-                    View All on ResearchGate <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -1936,46 +1775,53 @@
                 <h2>Get In Touch</h2>
             </div>
             <div class="contact-container">
+                
                 <div class="contact-info">
-                    <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                    <p>Gazipur Sadar, Dhaka, Bangladesh</p>
+                    <p>I am always open to discussing new research collaborations, interesting projects, or opportunities in computational biology and biochemistry.</p>
                     
-                    <h4><i class="fas fa-envelope"></i> Email</h4>
-                    <p><a href="mailto:biomahedihassan@gmail.com">biomahedihassan@gmail.com</a></p>
-                    
-                    <h4><i class="fas fa-phone"></i> Phone</h4>
-                    <p><a href="tel:+8801575780459">+880 1575-780459</a></p>
-                    
-                    <h4><i class="fas fa-briefcase"></i> Professional Interests</h4>
-                    <p>Available for research collaborations, computational biology consulting, academic positions in healthcare/medical fields, and drug discovery projects.</p>
-                    
+                    <h4>Contact Information</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:mahedihassan@example.com">mahedihassan@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+8801234567890">+880 1234 567 890</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </div>
+
                     <div class="social-links">
-                        <a href="https://www.researchgate.net/profile/Mahedi-Hassan-6" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                        <a href="https://www.linkedin.com/in/mahedibmb/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:biomahedihassan@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
-                    <form id="inquiryForm">
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email *" required>
+                            <input type="text" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject *">
+                            <input type="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message *" required></textarea>
+                            <input type="text" placeholder="Subject" required>
                         </div>
-                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
-                        <div id="formSuccess" class="form-success-message">
-                            <i class="fas fa-check-circle"></i> Thank you! Your message would send to biomahedihassan@gmail.com
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
                         </div>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
+                    <div class="form-success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1983,18 +1829,15 @@
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Mahedi Hassan. All Rights Reserved.</p>
-            <p>Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Science & Innovation</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
-                <a href="#home">Back to Top</a>
-            </p>
+            <p>&copy; 2023 Mahedi Hassan. All Rights Reserved.</p>
+            <p>Designed & Developed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Science</p>
         </div>
     </footer>
 
     <!-- ===== LIGHTBOX MODAL ===== -->
-    <div class="md-lightbox" id="mdLightbox">
+    <div class="md-lightbox" id="lightbox">
         <span class="md-lightbox-close" id="lightboxClose">&times;</span>
-        <img src="" alt="MD Analysis" id="lightboxImg">
+        <img src="" alt="Enlarged Plot" id="lightboxImg">
         <div class="md-lightbox-caption" id="lightboxCaption"></div>
     </div>
 
@@ -2003,11 +1846,12 @@
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
-        
+
         mobileToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            // Change icon
             const icon = mobileToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
+            if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -2015,7 +1859,8 @@
                 icon.classList.add('fa-bars');
             }
         });
-        
+
+        // Close mobile menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -2023,113 +1868,84 @@
                 mobileToggle.querySelector('i').classList.add('fa-bars');
             });
         });
-        
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Active Link on Scroll
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-links a');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href').slice(1) === current) {
-                    item.classList.add('active');
-                }
-            });
-        });
-        
-        // Form Handler (Custom Success Message)
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const successMsg = document.getElementById('formSuccess');
-            successMsg.style.display = 'flex'; // Show the success message
-            this.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                successMsg.style.display = 'none';
-            }, 5000);
-        });
-        
-        // MD Gallery Filter
+
+        // Tab Filtering for MD Analysis
         const tabs = document.querySelectorAll('.md-tab');
-        const items = document.querySelectorAll('.md-gallery-item');
-        
+        const galleryItems = document.querySelectorAll('.md-gallery-item');
+
         tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
                 tabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                const target = this.dataset.target;
-                
-                items.forEach(item => {
-                    if (target === 'all' || item.dataset.category === target) {
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const target = tab.getAttribute('data-target');
+
+                galleryItems.forEach(item => {
+                    if (target === 'all' || item.getAttribute('data-category') === target) {
                         item.style.display = 'flex';
+                        // Add fade in animation
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.opacity = '1', 50);
                     } else {
                         item.style.display = 'none';
                     }
                 });
             });
         });
-        
-        // Show All Button
-        const showAllBtn = document.getElementById('showAllBtn');
-        if (showAllBtn) {
-            showAllBtn.addEventListener('click', function() {
-                tabs.forEach(t => t.classList.remove('active'));
-                document.querySelector('.md-tab[data-target="all"]').classList.add('active');
-                items.forEach(item => item.style.display = 'flex');
-            });
-        }
-        
+
         // Lightbox Functionality
-        const lightbox = document.getElementById('mdLightbox');
+        const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxCaption = document.getElementById('lightboxCaption');
         const lightboxClose = document.getElementById('lightboxClose');
-        
-        document.querySelectorAll('.md-gallery-img').forEach(imgContainer => {
-            imgContainer.addEventListener('click', function() {
-                const img = this.querySelector('img');
-                const caption = this.parentElement.querySelector('.md-gallery-caption h5').textContent;
+        const galleryImages = document.querySelectorAll('.md-gallery-img img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
-                lightboxCaption.textContent = caption;
+                // Get caption from the sibling element structure
+                const caption = img.closest('.md-gallery-item').querySelector('.md-gallery-caption h5').innerText;
+                lightboxCaption.innerText = caption;
                 lightbox.classList.add('active');
             });
         });
-        
-        lightboxClose.addEventListener('click', function() {
+
+        lightboxClose.addEventListener('click', () => {
             lightbox.classList.remove('active');
         });
-        
-        lightbox.addEventListener('click', function(e) {
+
+        lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.classList.remove('active');
             }
         });
-        
-        // Init
-        document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+
+        // Contact Form Submission (Simulation)
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate API call
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                contactForm.reset();
+                successMessage.style.display = 'flex';
+                btn.innerText = originalText;
+                btn.disabled = false;
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
     </script>
 </body>
 </html>
