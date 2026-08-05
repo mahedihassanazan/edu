@@ -1,0 +1,35 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket    12:
+HEADER 0  - Pocket Score                      : 0.0481
+HEADER 1  - Drug Score                        : 0.0005
+HEADER 2  - Number of alpha spheres           :    16
+HEADER 3  - Mean alpha-sphere radius          : 3.9306
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.6817
+HEADER 5  - Mean B-factor of pocket residues  : 0.5862
+HEADER 6  - Hydrophobicity Score              : 2.2000
+HEADER 7  - Polarity Score                    :     5
+HEADER 8  - Amino Acid based volume Score     : 4.2000
+HEADER 9  - Pocket volume (Monte Carlo)       : 206.2443
+HEADER 10 - Pocket volume (convex hull)       : 3.1259
+HEADER 11 - Charge Score                      :     1
+HEADER 12 - Local hydrophobic density Score   : 4.0000
+HEADER 13 - Number of apolar alpha sphere     :     5
+HEADER 14 - Proportion of apolar alpha sphere : 0.3125
+ATOM   1000    N SER A 119     -17.238 -22.782   2.605  0.00  0.00           N 0
+ATOM   1011   CG ASN A 120     -21.193 -25.889   0.803  0.00  0.00           C 0
+ATOM   1005   OG SER A 119     -17.019 -25.534   2.077  0.41  9.64           O 0
+ATOM   1012  ND2 ASN A 120     -21.966 -26.667   1.522  0.00  0.00           N 0
+ATOM   1006    N ASN A 120     -19.342 -23.432   0.770  0.00  0.00           N 0
+ATOM   1010   CB ASN A 120     -21.581 -24.426   0.693  0.00  0.00           C 0
+ATOM    985    O SER A 117     -16.235 -22.421   6.313  0.00  0.00           O 0
+ATOM    989   CA TYR A 118     -18.028 -21.325   4.389  0.00  0.00           C 0
+ATOM    994  CD1 TYR A 118     -20.341 -20.909   6.850  0.00  0.00           C 0
+ATOM    990    C TYR A 118     -17.901 -21.662   2.901  0.00  0.00           C 0
+ATOM    992   CB TYR A 118     -19.175 -20.344   4.667  0.00  0.00           C 0
+ATOM   1019   CG ARG A 121     -21.677 -18.844   1.465  0.00  0.00           C 0
+ATOM   1021   NE ARG A 121     -22.644 -17.483   3.295  0.54  4.37           N 0
+TER
+END
