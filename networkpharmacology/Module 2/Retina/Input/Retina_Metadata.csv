@@ -1,0 +1,13 @@
+Sample_Name,Condition,Time
+R-01,Crush,2W
+R-02,Crush,2W
+R-03,Glaucoma,2W
+R-04,Glaucoma,2W
+R-05,Crush,3D
+R-06,Crush,3D
+R-07,Glaucoma,3D
+R-08,Glaucoma,3D
+R-09,Glaucoma,6W
+R-10,Glaucoma,6W
+R-11,Control,0D
+R-12,Control,0D
